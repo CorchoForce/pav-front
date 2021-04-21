@@ -1,5 +1,5 @@
-import logo from '../logo.svg';
-import '../App.css';
+import logo from '../images/logo.svg';
+import '../styles/App.css';
 import React from 'react'
 
 const Home = () => 
