@@ -6,7 +6,7 @@ const NotFound = () =>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        Page not founded
+        Página não encontrada
       </header>
     </div>
 
