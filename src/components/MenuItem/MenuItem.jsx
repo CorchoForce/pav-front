@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom'
-import style from './MenuItem.module.css'
+import { NavLink } from "react-router-dom";
+import style from "./MenuItem.module.css";
 
-const MenuItem = ({link, text}) => {
+const MenuItem = ({ link, text }) => {
   return (
     <li className={style.item}>
       <NavLink to={link} className={style.link}>
@@ -9,6 +9,6 @@ const MenuItem = ({link, text}) => {
       </NavLink>
     </li>
   );
-}
+};
 
-export default MenuItem
+export default MenuItem;

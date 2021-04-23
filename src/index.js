@@ -4,6 +4,6 @@ import './styles/index.css';
 import { Root } from './components'
 
 ReactDOM.render(
-  <Root/>,
+  <Root />,
   document.getElementById('root')
 );
