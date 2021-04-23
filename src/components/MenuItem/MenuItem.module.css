@@ -1,0 +1,12 @@
+.text {
+  color: #000;
+}
+
+.item {
+  list-style-type: none;
+  margin: 15px;
+}
+
+.text:hover {
+  color: gray;
+}

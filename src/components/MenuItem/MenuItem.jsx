@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import style from './MenuItem.module.css'
 
 const MenuItem = ({link, text}) => {
   return (
-    <li>
+    <li className={style.item}>
       <Link to={link}>
-        {text}
+        <span className={style.text}>{text}</span>
       </Link>
     </li>
   );
