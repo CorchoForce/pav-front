@@ -1,17 +1,15 @@
-.logo {
-  height: 100px;
-  width: auto;
+.navbar {
+  background: #e5e5e5;
+  display: flex;
+  font-size: 1.2rem;
 }
 
-.navbarContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
+.navbarLogo {
+  justify-self: start;
+  width: 100px;
+  height: auto;
 }
 
 .contentContainer {
-  background-color: #e5e5e5;
   width: 100%;
-  justify-content: space-around;
 }

@@ -5,10 +5,10 @@ import {MenuItems} from '..'
 
 const Navbar = () => {
   return (
-    <nav className={style.navbarContainer}>
+    <nav className={style.navbar}>
+      <img src={logo} alt="Web page logo" className={style.navbarLogo}/>
       <div className={style.contentContainer}>
-        <img src={logo} alt="Web page logo" className={style.logo}/>
-      <MenuItems/>
+        <MenuItems/>
       </div>
     </nav>
   );
