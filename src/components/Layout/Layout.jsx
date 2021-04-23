@@ -6,9 +6,9 @@ import {
 const Layout = ({ children }) => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       {children}
-      <Footer />
+      <Footer/>
     </div>
   );
 }

@@ -6,8 +6,8 @@ const MenuItems = () => {
     <ul className={style.menu}>
       <MenuItem link='/' text='Home' />
       <MenuItem link='/about' text='Sobre' />
-      <MenuItem link='/search' text='Buscar' />
-      <MenuItem link='/user' text='Login' />
+      <MenuItem link='/register' text='Cadastre-se' />
+      <MenuItem link='/login' text='Entrar' />
     </ul>
   );
 }
