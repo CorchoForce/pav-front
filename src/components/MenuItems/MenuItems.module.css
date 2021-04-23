@@ -2,4 +2,5 @@
   display: flex;
   position: relative;
   justify-content: right;
+  width: 100%;
 }
