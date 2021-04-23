@@ -3,9 +3,3 @@
   position: relative;
   justify-content: right;
 }
-
-@media screen and (max-width: 530px) {
-  .menu {
-    display: none;
-  }
-}
