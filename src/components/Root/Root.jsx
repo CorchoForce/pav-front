@@ -1,6 +1,6 @@
-import React from 'react'
-import { Routes } from '..'
+import React from "react";
+import { Routes } from "..";
 
-const Root = () => <Routes/>
+const Root = () => <Routes />;
 
-export default Root
+export default Root;
