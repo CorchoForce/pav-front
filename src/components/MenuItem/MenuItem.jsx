@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import style from './MenuItem.module.css'
 
 const MenuItem = ({link, text}) => {
   return (
     <li className={style.item}>
-      <Link to={link} className={style.link}>
+      <NavLink to={link} className={style.link}>
         <span className={style.text}>{text}</span>
-      </Link>
+      </NavLink>
     </li>
   );
 }
