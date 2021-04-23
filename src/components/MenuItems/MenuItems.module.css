@@ -1,0 +1,5 @@
+.menu {
+  display: flex;
+  position: relative;
+  justify-content: right;
+}
