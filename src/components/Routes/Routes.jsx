@@ -12,11 +12,11 @@ const Routes = () => (
     <BrowserRouter>
         <Layout>
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="*" component={NotFound} />
+                <Route sensitive exact path="/" component={Home} />
+                <Route sensitive exact path="/about" component={About} />
+                <Route sensitive exact path="/register" component={Register} />
+                <Route sensitive exact path="/login" component={Login} />
+                <Route sensitive exact path="*" component={NotFound} />
             </Switch>
         </Layout>
     </BrowserRouter>
