@@ -1,5 +1,5 @@
 import style from "./Navbar.module.css";
-import logo from "../../images/navbar_logo.svg";
+import logo from "../../images/navbar_logo.png";
 
 import { MenuItems } from "..";
 

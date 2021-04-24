@@ -1,4 +1,4 @@
-import logo from '../images/footer_logo.svg';
+import logo from '../images/footer_logo.png';
 import '../styles/App.css';
 import React from 'react'
 
