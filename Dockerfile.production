@@ -9,4 +9,5 @@ RUN npm i
 
 COPY . ./
 
-RUN npm run build -a
+RUN npm run build
+RUN heroku container:push web --app pav-front-production
