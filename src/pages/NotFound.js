@@ -1,4 +1,4 @@
-import logo from '../images/404_logo.svg';
+import logo from '../images/404_logo.png';
 import '../styles/App.css';
 import React from 'react'
 
