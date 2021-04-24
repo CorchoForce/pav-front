@@ -1,0 +1,33 @@
+.text {
+  color: #000;
+  text-decoration: none;
+}
+
+.item {
+  list-style-type: none;
+  margin: 15px;
+}
+
+.text:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.text:hover:after {
+  width: 100%;
+  background: gray;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: gray;
+  text-decoration: none;
+  cursor: pointer;
+}
