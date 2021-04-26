@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { About, Home, NotFound, Login, Register } from "../../pages";
 import { Layout } from "..";
+
 const Root = () => (
   <BrowserRouter>
     <Layout>
