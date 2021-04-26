@@ -11,7 +11,7 @@ const Footer = () => {
       </p>
       <p>
         Quer ofertar uma vaga ? Entre em contato em 
-        <span className={styles.email}>{" corchoforce@gmail.com"}</span>
+        <a className={styles.email} href="mailto:webmaster@example.com">{" corchoforce@gmail.com"}</a>
       </p>
     </footer>
   );
