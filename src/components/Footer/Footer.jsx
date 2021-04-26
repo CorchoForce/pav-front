@@ -11,7 +11,7 @@ const Footer = () => {
         <p className={styles.text}>
           @ 2021 CorchoForce Ltda
         </p>
-        <p>
+        <p className={styles.text}>
           Created and Developed by CorchoForce
         </p>
       </div>
