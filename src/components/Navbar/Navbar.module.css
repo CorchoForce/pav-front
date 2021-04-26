@@ -1,10 +1,14 @@
 .navbar {
   background: #e5e5e5;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.2rem;
+  width: 100%;
 }
 
 .navbarLogo {
+  padding: 5px;
   justify-self: start;
   width: 100px;
   height: auto;

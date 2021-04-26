@@ -1,0 +1,20 @@
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8em;
+  height: 2em;
+  background-color: #c2c2c2;
+  font-style: italic
+}
+
+.email {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+}
+
+.email:hover {
+  color: #3e3e3e;
+}

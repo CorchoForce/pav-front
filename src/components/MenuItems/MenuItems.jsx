@@ -1,9 +1,9 @@
 import { MenuItem } from "..";
-import style from "./MenuItems.module.css";
+import styles from "./MenuItems.module.css";
 
 const MenuItems = () => {
   return (
-    <ul className={style.menu}>
+    <ul className={styles.menu}>
       <MenuItem link="/" text="Home" />
       <MenuItem link="/about" text="Sobre" />
     </ul>
