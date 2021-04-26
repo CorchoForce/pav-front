@@ -1,0 +1,11 @@
+.navbar {
+  background: #e5e5e5;
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.navbarLogo {
+  justify-self: start;
+  width: 100px;
+  height: auto;
+}
