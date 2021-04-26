@@ -1,20 +1,5 @@
 .footerContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
-  align-items: center
-}
-
-.contentContainer {
-  background-color: #e5e5e5;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.creditsContainer {
-  display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -24,7 +9,6 @@
   font-style: italic
 }
 
-.logo {
-  height: 200px;
-  width: auto;
+.email {
+  font-weight: bold;
 }
