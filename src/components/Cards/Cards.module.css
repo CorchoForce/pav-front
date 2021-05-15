@@ -1,0 +1,16 @@
+.cardsContainer {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
