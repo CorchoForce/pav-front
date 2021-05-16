@@ -1,24 +1,26 @@
-import { getOffers } from '../../utils/api'
-import { Card, Loading, NotFound } from '..'
-import styles from './Cards.module.css'
-import React from 'react'
+import { getOffers } from "../../utils/api";
+import { Card, Loading, NotFound } from "..";
+import styles from "./Cards.module.css";
+import React from "react";
 
 class Cards extends React.Component {
   state = {
     loading: true,
-    data: []
+    data: [],
   };
 
   componentDidMount() {
-    this.getOffersFromApi()
+    this.getOffersFromApi();
   }
 
   getOffersFromApi = () => {
-    getOffers().then((response) => {
-      this.setState({data: response.data, loading: false})
-    }).catch((error) => {
-      this.setState({data: [], loading: false})
-    })
+    getOffers()
+      .then((response) => {
+        this.setState({ data: response.data, loading: false });
+      })
+      .catch((error) => {
+        this.setState({ data: [], loading: false });
+      });
   };
 
   render() {
@@ -26,17 +28,18 @@ class Cards extends React.Component {
       <div className={styles.contentContainer}>
         {this.state.loading ? (
           <Loading />
+        ) : this.state.data.length === 0 ? (
+          <NotFound text={"Nenhuma oferta foi encontrada"} />
         ) : (
-          this.state.data.length === 0 ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
-            <div className={styles.cardsContainer}>
-              {this.state.data.map((data) => (
-                <Card props={data} />
-              ))}
-            </div>
+          <div className={styles.cardsContainer}>
+            {this.state.data.map((data) => (
+              <Card props={data} />
+            ))}
+          </div>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default Cards
+export default Cards;
