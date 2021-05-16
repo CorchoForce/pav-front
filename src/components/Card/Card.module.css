@@ -1,26 +1,35 @@
 .title {
-    justify-content: center;
+    margin-top: 5px;
+    text-align: center;
     font-weight: bold;
 }
+
+.type {
+    width: max-content;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
 .card {
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 300px;
+    height: 400px;
     border-radius: 20px;
     background-color: rgba(59, 221, 230, 0.692);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
     transition: 0.3s;
-    margin: 20px;
     padding: 20px;
 }
 
 .card:hover {
     box-shadow: 0 8px 10px 4px rgba(255, 255, 255, 0.3);
 }
-.description{
-    text-align: left;
 
-}
-.requirements{
-    text-align:left
-
+.link {
+    margin: 20px;
+    text-decoration: none;
+    color: #000000; 
 }

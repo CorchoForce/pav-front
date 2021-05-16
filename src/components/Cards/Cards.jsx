@@ -1,5 +1,5 @@
 import { getOffers } from '../../utils/api'
-import { Card } from '..'
+import { Card, Loading } from '..'
 import styles from './Cards.module.css'
 import React from 'react'
 
@@ -26,7 +26,7 @@ class Cards extends React.Component {
     return (
       <div className={styles.contentContainer}>
         {this.state.loading ? (
-          <p>Loading...</p>
+          <Loading />
         ) : (
           <div className={styles.cardsContainer}>
             {this.state.data.map((data) => (
