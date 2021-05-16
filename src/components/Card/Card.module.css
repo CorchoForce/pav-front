@@ -18,7 +18,7 @@
     width: min(300px, 70vw);
     height: 90%;
     border-radius: 20px;
-    background-color: rgba(59, 221, 230, 0.692);
+    background-color: #85B7D6;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
     transition: 0.3s;
     padding: 20px;
