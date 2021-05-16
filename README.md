@@ -45,7 +45,7 @@ $ touch .env
 #Build the react app
 $ npm start
 
-#Them the app will be running in the http://localhost:5000
+#Them the app will be running in the http://localhost:3000
 ```
 
 ![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843592891661811742/unknown.png)
