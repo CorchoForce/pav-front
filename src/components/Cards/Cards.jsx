@@ -30,12 +30,13 @@ class Cards extends React.Component {
         {this.state.loading ? (
           <Loading />
         ) : (
-          this.state.data?.length === 0 ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
+          this.state.data?.length !== 0 ? 
             <div className={styles.cardsContainer}>
               {this.state.data.map((data) => (
                 <Card props={data} />
               ))}
-            </div>
+            </div> :
+            <NotFound text={"Nenhuma oferta foi encontrada"} />
         )}
       </div>
     )
