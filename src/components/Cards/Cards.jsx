@@ -4,19 +4,22 @@ import styles from './Cards.module.css'
 import React from 'react'
 
 class Cards extends React.Component {
-  state = {
-    loading: true,
-    data: []
-  };
+  constructor(props) {
+    super(props)
+    const cache = sessionStorage.getItem('@pav/offers')
+    this.state = cache ? { data: JSON.parse(cache), loading: false }
+                       : { data: [], loading: true }
+  }
 
   componentDidMount() {
-    this.getOffersFromApi()
+    if (this.state.loading) { this.getOffersFromApi() }
   }
 
   getOffersFromApi = () => {
     getOffers().then((response) => {
+      sessionStorage.setItem('@pav/offers', JSON.stringify(response.data));
       this.setState({data: response.data, loading: false})
-    }).catch((error) => {
+    }).catch(() => {
       this.setState({data: [], loading: false})
     })
   };
@@ -27,7 +30,7 @@ class Cards extends React.Component {
         {this.state.loading ? (
           <Loading />
         ) : (
-          this.state.data.length === 0 ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
+          !this.state.data || this.state.data?.length === 0 ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
             <div className={styles.cardsContainer}>
               {this.state.data.map((data) => (
                 <Card props={data} />

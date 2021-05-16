@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Pega A Visão
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843572877185253425/unknown.png)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+<!--ts-->
 
-### `yarn start`
+- [About](#about)
+- [Requirements](#requirements)
+- [How to use](#how-to-use)
+  - [Setting up Frontend](#frontend-setup)
+  - [Setting up Backend](#backend-setup)
+- [Technologies](#technologies)
+<!--te-->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+About the project
 
-### `yarn test`
+## Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this repository by yourself you will need to install node.js, docker and docker-compose in your machine and them install all the projects requirements. We will show how to do it in the next step.
 
-### `yarn build`
+## How to use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Clone the frontend repository
+$ git clone <https://github.com/CorchoForce/pav-front>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Access the frontend directory
+$ cd pav-front/
 
-### `yarn eject`
+# Build the docker image
+$ docker build . -t pav-front:v1.0.0
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Run the docker container the following command
+$ docker run --network="host" -p 3000:3000 pav-front:v1.0.0
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#Them the app will be running in the http://localhost:3000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843592891661811742/unknown.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Backend Setup
 
-## Learn More
+```bash
+# Clone the backend repository
+$ git clone <https://github.com/CorchoForce/pav-back>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Access the backend directory
+$ cd pav-back/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Create a .env file
+$ touch .env
 
-### Code Splitting
+# Add the following parameters to the created .env file
+ SERVER_PORT=8080 #Backend running port
+ URL=localhost #Backend url
+ PRODUCTION=FALSE #If it's running in production mode or not
+ FRONT_URL=any #The frontend production url
+ MONGO_USERNAME=root #Mongo username
+ MONGO_PASSWORD=123 #Mongo password
+ MONGO_PORT=27017 # Mongo port
+ MONGO_DB=sharkinfo #Mongo database
+ MONGO_HOSTNAME=127.0.0.1 #Mongo hostname
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#Run the docker-compose file
+$ docker-compose up
 
-### Analyzing the Bundle Size
+#The api will be running in the port 27017
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843592277590802442/unknown.png)
 
-### Making a Progressive Web App
+## Technologies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- Express.js
+- Docker
+- Heroku

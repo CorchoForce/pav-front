@@ -4,7 +4,7 @@ import { Offer, NotFound, Loading } from '../components'
 
 class OfferDetails extends React.Component {
   constructor(props) {
-    super()
+    super(props)
     this.id = props.match.params.id
   }
 
