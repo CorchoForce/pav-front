@@ -38,7 +38,7 @@ $ git clone <https://github.com/CorchoForce/pav-front>
 
 ```bash
 # Clone the backend repository
-$ git clone <https://github.com/CorchoForce/pav-front>
+$ git clone <https://github.com/CorchoForce/pav-back>
 ```
 
 ![demonstration]()
