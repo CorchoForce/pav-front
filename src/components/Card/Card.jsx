@@ -13,7 +13,7 @@ const Card = ({ props }) => {
   const selectedInfo = [
     {
       value: "Descrição: ",
-      text: props.description.slice(0, 150) + '...'
+      text: props.description.length > 150 ? props.description.slice(0, 150) + '...' : props.description
     },
     {
       value: "Requisitos: ",
