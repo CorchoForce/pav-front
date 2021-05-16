@@ -20,7 +20,7 @@ About the project
 
 ## Requirements
 
-To run this repository by yourself you will need to install node.js in your machine and them install all the projects requirements. We will show how to do it in the next step.
+To run this repository by yourself you will need to install node.js, docker and docker-compose in your machine and them install all the projects requirements. We will show how to do it in the next step.
 
 ## How to use
 
@@ -59,8 +59,22 @@ $ git clone <https://github.com/CorchoForce/pav-back>
 # Access the backend directory
 $ cd pav-back/
 
-#Install all the requirements
-$ npm ci
+# Create a .env file
+$ touch .env
+
+# Add the following parameters to the created .env file
+ SERVER_PORT=8080
+ URL=localhost
+ PRODUCTION=FALSE
+ FRONT_URL=asdadsad
+ MONGO_USERNAME=root
+ MONGO_PASSWORD=123
+ MONGO_PORT=27017
+ MONGO_DB=sharkinfo
+ MONGO_HOSTNAME=127.0.0.1
+
+#Run the docker-compose file
+$ docker-compose up
 ```
 
 ![demonstration]()
