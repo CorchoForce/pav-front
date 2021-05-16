@@ -54,6 +54,12 @@ const Offer = ({ props }) => {
             {props.user.email}
           </a>
         </p>
+        <p>
+          <b>{"Website: "}</b>
+          <a href={"http://"+props.site} className={styles.email}>
+            {props.site}
+          </a>
+        </p>
       </div>
     </div>
   )
