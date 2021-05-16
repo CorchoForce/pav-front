@@ -11,8 +11,8 @@
   animation: spin 3s infinite;
 }
 
-.whiteText {
-  color: #FFFFFF
+.darkText {
+  color:#1a1a25;
 }
 
 @keyframes spin {

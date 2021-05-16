@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { About, Home, OfferDetails} from "../../pages";
-import { Layout, NotFound } from "..";
+import { About, Home, NotFound, Login, Register } from "../../pages";
+import { Layout } from "..";
 
 const Root = () => (
   <BrowserRouter>
@@ -9,8 +9,9 @@ const Root = () => (
       <Switch>
         <Route sensitive exact path="/" component={Home} />
         <Route sensitive exact path="/about" component={About} />
-        <Route sensitive exact path="/offer/:id" render={(props) => <OfferDetails {...props} />} />
-        <Route path="*" render={() => <NotFound text={"Página não encontrada"} />} />
+        <Route sensitive exact path="/register" component={Register} />
+        <Route sensitive exact path="/login" component={Login} />
+        <Route sensitive exact path="*" component={NotFound} />
       </Switch>
     </Layout>
   </BrowserRouter>

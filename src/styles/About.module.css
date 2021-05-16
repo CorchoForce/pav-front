@@ -1,7 +1,10 @@
 .aboutContainer {
-  color: #FFFFFF;
+  color: #1a1a25;
   width: 90%;
   min-height: 80vh;
+  font-family: "Lucida Console";
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .title {

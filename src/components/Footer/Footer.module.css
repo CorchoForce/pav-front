@@ -4,11 +4,11 @@
   text-align: center;
   justify-content: space-around;
   align-items: center;
+  height: 1rem;
   width: 100%;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 12px;
   font-size: 0.8em;
-  height: 1rem;
   background-color: #dfd9d1;
   font-style: italic
 }

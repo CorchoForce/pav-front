@@ -8,6 +8,5 @@ const apiClient = axios.create(
 )
 
 const getOffers = () => (apiClient.get('/offer'))
-const getOffer = (id) => (apiClient.get('/offer/' + id))
 
-export { getOffers, getOffer } 
+export { getOffers } 
