@@ -20,9 +20,9 @@ class OfferDetails extends React.Component {
 
   getOfferFromApi = (id) => {
     getOffer(id).then((response) => {
-      this.setState({offer: response.data, loading: false})
+      this.setState({ offer: response.data, loading: false })
     }).catch(() => {
-      this.setState({loading: false, notFound: true})
+      this.setState({ loading: false, notFound: true })
     })
   };
 
@@ -30,12 +30,12 @@ class OfferDetails extends React.Component {
     return (
       <div>
         {this.state.loading ? (
-            <Loading />
-          ) : (
-            this.state.notFound ? (
-              <NotFound text={"Oferta não encontrada"} />
-            ) : <Offer props={this.state.offer} />
-          )}
+          <Loading />
+        ) : (
+          this.state.notFound ? (
+            <NotFound text={"Oferta não encontrada"} />
+          ) : <Offer props={this.state.offer} />
+        )}
       </div>
     )
   }
