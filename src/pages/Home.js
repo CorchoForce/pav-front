@@ -1,3 +1,4 @@
+import '../styles/App.css';
 import {
   Cards
 } from '../components'
@@ -5,7 +6,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
+    <div className="App">
       <Cards />
     </div>
   )

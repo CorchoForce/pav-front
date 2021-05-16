@@ -6,7 +6,7 @@ const NotFound = ({text}) => {
   return (
     <div className={styles.app}>
       <img src={logo} className={styles.logo} alt="logo" />
-      <p className={styles.whiteText}> {text} </p>
+      <p className={styles.darkText}> {text} </p>
     </div>
   )
 }

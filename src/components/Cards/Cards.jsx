@@ -1,12 +1,12 @@
 import { getOffers } from '../../utils/api'
-import { Card, Loading, NotFound } from '..'
+import { Card } from '..'
 import styles from './Cards.module.css'
 import React from 'react'
 
 class Cards extends React.Component {
   state = {
     loading: true,
-    data: []
+    offers: []
   };
 
   componentDidMount() {
@@ -17,7 +17,8 @@ class Cards extends React.Component {
     getOffers().then((response) => {
       this.setState({data: response.data, loading: false})
     }).catch((error) => {
-      this.setState({data: [], loading: false})
+      console.log(error);
+      return null;
     })
   };
 
@@ -25,14 +26,13 @@ class Cards extends React.Component {
     return (
       <div className={styles.contentContainer}>
         {this.state.loading ? (
-          <Loading />
+          <p>Loading...</p>
         ) : (
-          this.state.data.length === 0 ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
-            <div className={styles.cardsContainer}>
-              {this.state.data.map((data) => (
-                <Card props={data} />
-              ))}
-            </div>
+          <div className={styles.cardsContainer}>
+            {this.state.data.map((data) => (
+              <Card props={data} />
+            ))}
+          </div>
         )}
       </div>
     )
