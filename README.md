@@ -48,7 +48,7 @@ $ npm start
 #Them the app will be running in the http://localhost:5000
 ```
 
-![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843574626859614229/unknown.png)
+![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843592891661811742/unknown.png)
 
 ### Backend Setup
 
@@ -65,8 +65,8 @@ $ touch .env
 # Add the following parameters to the created .env file
  SERVER_PORT=8080 #Backend running port
  URL=localhost #Backend url
- PRODUCTION=TRUE #If it's running in production mode or not
- FRONT_URL=any #The frontend url
+ PRODUCTION=FALSE #If it's running in production mode or not
+ FRONT_URL=any #The frontend production url
  MONGO_USERNAME=root #Mongo username
  MONGO_PASSWORD=123 #Mongo password
  MONGO_PORT=27017 # Mongo port
@@ -75,6 +75,8 @@ $ touch .env
 
 #Run the docker-compose file
 $ docker-compose up
+
+#The api will be running in the port 27017
 ```
 
 ![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843592277590802442/unknown.png)
