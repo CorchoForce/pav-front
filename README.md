@@ -33,17 +33,11 @@ $ git clone <https://github.com/CorchoForce/pav-front>
 # Access the frontend directory
 $ cd pav-front/
 
-#Install all the requirements
-$ npm ci
+# Build the docker image
+$ docker build . -t pav-front:v1.0.0
 
-# Create a .env file
-$ touch .env
-
-# Add the following parameters to the created .env file
- REACT_APP_API_URL #The backend url
-
-#Build the react app
-$ npm start
+# Run the docker container the following command
+$ docker run --network="host" -p 3000:3000 pav-front:v1.0.0
 
 #Them the app will be running in the http://localhost:3000
 ```
