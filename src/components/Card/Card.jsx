@@ -4,11 +4,12 @@ import { Detail } from '..'
 
 const Card = ({ props }) => {
   const colors = {
-    "Estágio": "#FF0000",
-    "Bolsa IC": "#00FF00",
-    "Extensão": "#0000FF",
+    "estagio": "#CC66CC",
+    "bolsa_ic": "#72f542",
+    "extensao": "#FFFF44",
     "other": "#FFFFFF"
   }
+
   const backgroundColor = colors[props.type] || colors["other"]
   const selectedInfo = [
     {
