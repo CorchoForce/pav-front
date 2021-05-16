@@ -1,32 +1,39 @@
 import '@testing-library/jest-dom';
-import { 
-    render, 
-    screen
-} from '@testing-library/react';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 import {
-    About,
-    Home
+  render,
+  screen,
+} from '@testing-library/react';
+
+
+import {
+  About,
+  Home
 } from './pages'
 
 import {
-    NotFound
+  NotFound,
+  Cards
 } from './components'
 
+
+test('Home renders a <Cards />', () => {
+  const renderer = new ShallowRenderer();
+  renderer.render(<Home />);
+  const result = renderer.getRenderOutput();
+  expect(result.props.children).toEqual(<Cards />);
+});
+
+
 test('Renders About route', () => {
-  render(<About/>);
+  render(<About />);
   const linkElement = screen.getByText(/sobre/i, { exact: false });
   expect(linkElement).toBeInTheDocument();
 });
 
-test('Renders Home route', () => {
-  render(<Home/>);
-  const linkElement = screen.getByText(/loading/i, { exact: false })
-  expect(linkElement).toBeInTheDocument();
-});
-
 test('Renders NotFound route', () => {
-  render(<NotFound/>);
-  const linkElement = screen.getByText(/página não encontrada/i, { exact: false });
+  render(<NotFound text={"any"} />);
+  const linkElement = screen.getByText(/any/i, { exact: false })
   expect(linkElement).toBeInTheDocument();
 });
