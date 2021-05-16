@@ -6,7 +6,7 @@ import React from 'react'
 class Cards extends React.Component {
   state = {
     loading: true,
-    offers: []
+    data: []
   };
 
   componentDidMount() {
@@ -15,9 +15,9 @@ class Cards extends React.Component {
 
   getOffersFromApi = () => {
     getOffers().then((response) => {
-      this.setState({offers: response.data, loading: false})
+      this.setState({data: response.data, loading: false})
     }).catch((error) => {
-      this.setState({offers: [], loading: false})
+      this.setState({data: [], loading: false})
     })
   };
 
@@ -27,10 +27,10 @@ class Cards extends React.Component {
         {this.state.loading ? (
           <Loading />
         ) : (
-          this.state.offers === [] ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
+          this.state.data === [] ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
             <div className={styles.cardsContainer}>
-              {this.state.offers.map((offers) => (
-                <Card props={offers} />
+              {this.state.data.map((data) => (
+                <Card props={data} />
               ))}
             </div>
         )}
