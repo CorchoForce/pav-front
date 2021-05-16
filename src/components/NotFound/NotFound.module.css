@@ -11,10 +11,6 @@
   animation: spin 3s infinite;
 }
 
-.whiteText {
-  color: #FFFFFF
-}
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
