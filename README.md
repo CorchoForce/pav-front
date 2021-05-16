@@ -36,6 +36,12 @@ $ cd pav-front/
 #Install all the requirements
 $ npm ci
 
+# Create a .env file
+$ touch .env
+
+# Add the following parameters to the created .env file
+ REACT_APP_API_URL #The backend url
+
 #Build the react app with build configuration
 $ npm run build
 
@@ -63,15 +69,15 @@ $ cd pav-back/
 $ touch .env
 
 # Add the following parameters to the created .env file
- SERVER_PORT=8080
- URL=localhost
- PRODUCTION=FALSE
- FRONT_URL=asdadsad
- MONGO_USERNAME=root
- MONGO_PASSWORD=123
- MONGO_PORT=27017
- MONGO_DB=sharkinfo
- MONGO_HOSTNAME=127.0.0.1
+ SERVER_PORT=8080 #Backend running port
+ URL=localhost #Backend url
+ PRODUCTION=TRUE #If it's running in production mode or not
+ FRONT_URL=any #The frontend url
+ MONGO_USERNAME=root #Mongo username
+ MONGO_PASSWORD=123 #Mongo password
+ MONGO_PORT=27017 # Mongo port
+ MONGO_DB=sharkinfo #Mongo database
+ MONGO_HOSTNAME=127.0.0.1 #Mongo hostname
 
 #Run the docker-compose file
 $ docker-compose up
