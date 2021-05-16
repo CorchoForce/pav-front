@@ -17,8 +17,7 @@ class Cards extends React.Component {
     getOffers().then((response) => {
       this.setState({data: response.data, loading: false})
     }).catch((error) => {
-      console.log(error);
-      return null;
+      this.setState({loading: false})
     })
   };
 
