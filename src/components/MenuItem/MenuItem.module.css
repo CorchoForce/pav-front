@@ -1,6 +1,7 @@
 .text {
   color:cornsilk;
   text-decoration: none;
+  font-family:"Lucida Console", monospace;
 }
 
 .item {
@@ -12,7 +13,7 @@
   content: "";
   display: block;
   height: 3px;
-  width: 3px;
+  width: 1vh;
   transition: width 0.5s ease, background-color 0.5s ease;
 }
 
