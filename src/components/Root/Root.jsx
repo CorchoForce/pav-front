@@ -10,7 +10,7 @@ const Root = () => (
         <Route sensitive exact path="/" component={Home} />
         <Route sensitive exact path="/about" component={About} />
         <Route sensitive exact path="/offer/:id" render={(props) => <OfferDetails {...props} />} />
-        <Route path="*" component={NotFound} />
+        <Route path="*" render={() => <NotFound text={"Página não encontrada"} />} />
       </Switch>
     </Layout>
   </BrowserRouter>

@@ -33,7 +33,7 @@ class OfferDetails extends React.Component {
             <Loading />
           ) : (
             this.state.notFound ? (
-              <NotFound />
+              <NotFound text={"Oferta não encontrada"} />
             ) : <Offer props={this.state.offer} />
           )}
       </div>
