@@ -46,7 +46,7 @@ $ touch .env
 $ npm run build
 
 # Install the serve
-$ yarn global add serve
+$ npm install -g serve
 
 # Run the built application
 $ serve -s build
