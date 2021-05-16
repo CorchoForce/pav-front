@@ -22,7 +22,7 @@ const Card = ({ props }) => {
     },
     {
       value: "Remuneração: ",
-      text: "R$ " + props.pay + ",00/mês"
+      text: props.pay
     },
     {
       value: "Carga horária: ",
