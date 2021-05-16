@@ -1,15 +1,18 @@
 .navbar {
-  background: #e5e5e5;
-  display: flex;
+  background: #0B5471;
+  display:flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  height:10vh;
   width: 100%;
+  box-shadow: 10px 20px 40px 0 rgba(0,0,0,.2);
+  
 }
 
 .navbarLogo {
   padding: 5px;
   justify-self: start;
-  width: 100px;
+  width: 8vh;
   height: auto;
 }
