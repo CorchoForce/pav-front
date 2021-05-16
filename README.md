@@ -16,7 +16,11 @@
 
 ## About
 
-About the project
+It is well established among students at the Federal University of Rio de Janeiro (UFRJ) that internship, scientific initiation and extension opportunities offered are not well publicized. Between papers taped to the countless murals in the corridors of campuses, which may well date back to years, and emails that get lost in the inbox amidst many opportunities, a student who is looking for an opportunity of the type feels lost and helpless by the University.
+
+Recruiters are also hampered by this confusing process. Often, they depend on the goodwill of teachers to forward their vacancies to students of the desired profile, or else they end up in the inbox of students of courses that are totally outside the scope of the proposed vacancy. A system that helps them will be of great value to the company, laboratory or project in which they work.
+
+Thus, the need for a system that aggregates internship opportunities, scientific initiation and extension for university students by the members of CorchoForce was identified. The project was carried out within the scope of the Advanced Programming discipline (EEL418), from the Polytechnic School of UFRJ, and guided by Professor Cláudio Miceli de Farias, from the Program for Systems and Computer Engineering at COPPE/UFRJ.
 
 ## Requirements
 
