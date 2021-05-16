@@ -42,14 +42,8 @@ $ touch .env
 # Add the following parameters to the created .env file
  REACT_APP_API_URL #The backend url
 
-#Build the react app with build configuration
-$ npm run build
-
-# Install the serve
-$ npm install -g serve
-
-# Run the built application
-$ serve -s build
+#Build the react app
+$ npm start
 
 #Them the app will be running in the http://localhost:5000
 ```
@@ -83,7 +77,7 @@ $ touch .env
 $ docker-compose up
 ```
 
-![demonstration]()
+![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843592277590802442/unknown.png)
 
 ## Technologies
 
