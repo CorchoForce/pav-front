@@ -1,7 +1,7 @@
 .cardsContainer {
   display: flex;
   width: 90%;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }

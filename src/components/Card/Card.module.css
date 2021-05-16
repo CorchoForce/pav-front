@@ -15,8 +15,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 300px;
-    height: 400px;
+    width: min(300px, 70vw);
+    height: 90%;
     border-radius: 20px;
     background-color: rgba(59, 221, 230, 0.692);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
@@ -25,7 +25,7 @@
 }
 
 .card:hover {
-    box-shadow: 0 8px 10px 4px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px 0 rgba(11, 84, 160, 1);
 }
 
 .link {
