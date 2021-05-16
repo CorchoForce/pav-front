@@ -26,7 +26,7 @@ const Card = ({ props }) => {
     },
     {
       value: "Carga horária: ",
-      text: props.neededHours + 'h/dia'
+      text: props.neededHours
     }
   ]
 

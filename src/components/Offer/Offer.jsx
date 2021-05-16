@@ -21,7 +21,7 @@ const Offer = ({ props }) => {
     },
     {
       value: "Carga horária: ",
-      text: props.neededHours + 'h/dia'
+      text: props.neededHours
     },
     {
       value: "Ofertador da vaga: ",
