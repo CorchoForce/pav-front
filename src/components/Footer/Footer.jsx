@@ -11,8 +11,8 @@ const Footer = () => {
         <a className={styles.reference} target='_blank' rel='noreferrer' href="https://github.com/CorchoForce/">{" CorchoForce"}</a>
       </p>
       <p className={styles.info}>
-        Quer ofertar uma vaga ? Entre em contato em 
-        <a className={styles.reference} target='_blank' rel='noreferrer' href="mailto:corchoforce@gmail.com">{" corchoforce@gmail.com"}</a>
+        Quer ofertar uma vaga ? Entre em contato em
+        <a className={styles.reference} href="mailto:corchoforce@gmail.com">{" corchoforce@gmail.com"}</a>
       </p>
     </footer>
   );
