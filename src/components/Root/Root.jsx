@@ -7,7 +7,7 @@ const Root = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route sensitive exact path="/" component={Home} />
+        <Route sensitive exact path="/" render={(props) => <Home {...props} />} />
         <Route sensitive exact path="/about" component={About} />
         <Route sensitive exact path="/offer/:id" render={(props) => <OfferDetails {...props} />} />
         <Route path="*" render={() => <NotFound text={"Página não encontrada"} />} />
