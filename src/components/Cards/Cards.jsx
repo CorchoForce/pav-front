@@ -11,11 +11,11 @@ class Cards extends React.Component {
 
   handleState = () => {
     if (this.props.search) {
-      this.setState({ data: [], loading: true, search: this.props.search })
+      this.state = { data: [], loading: true, search: this.props.search }
     } else {
       const cache = sessionStorage.getItem('@pav/offers')
-      this.setState(cache ? { data: JSON.parse(cache), loading: false, search: this.props.search }
-                          : { data: [], loading: true, search: this.props.search })
+      this.state = cache ? { data: JSON.parse(cache), loading: false, search: this.props.search }
+                         : { data: [], loading: true, search: this.props.search }
     }
   }
 
