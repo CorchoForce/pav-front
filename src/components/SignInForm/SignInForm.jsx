@@ -6,8 +6,8 @@ const SignInForm = () => {
   const [password, setPassword] = useState(undefined)
 
   const handleSubmit = (event) => {
-    console.log("fazer login com senha = " + password + " e email = " + email)
     event.preventDefault()
+    console.log("fazer login com senha = " + password + " e email = " + email)
   }
 
   const inputHandler = (event, setter) => {

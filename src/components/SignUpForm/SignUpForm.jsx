@@ -9,8 +9,8 @@ const SignUpForm = () => {
   const [cpf, setCpf] = useState(undefined)
 
   const handleSubmit = (event) => {
-    console.log("fazer cadastro com senha = " + password + " e email = " + email + " e nome = " + name + "e cpf = " + cpf)
     event.preventDefault()
+    console.log("fazer cadastro com senha = " + password + " e email = " + email + " e nome = " + name + "e cpf = " + cpf)
   }
 
   const inputHandler = (event, setter) => {
