@@ -7,7 +7,7 @@ const SearchBox = ({initialSearch, history}) => {
   
   const handleChange = (event) => (setSearch(event.target.value))
   const handleSubmit = (event) => {
-    history.push('/?search=' + search)
+    history.push('/?search='.concat(String(search) === "undefined" ? "" : search))
     event.preventDefault()
   }
 

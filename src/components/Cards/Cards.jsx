@@ -6,16 +6,22 @@ import React from 'react'
 class Cards extends React.Component {
   constructor(props) {
     super(props)
-    this.handleState()
-  }
-
-  handleState = () => {
     if (this.props.search) {
       this.state = { data: [], loading: true, search: this.props.search }
     } else {
       const cache = sessionStorage.getItem('@pav/offers')
       this.state = cache ? { data: JSON.parse(cache), loading: false, search: this.props.search }
                          : { data: [], loading: true, search: this.props.search }
+    }
+  }
+
+  handleState = () => {
+    if (this.props.search) {
+      this.setState({ data: [], loading: true, search: this.props.search })
+    } else {
+      const cache = sessionStorage.getItem('@pav/offers')
+      this.setState(cache ? { data: JSON.parse(cache), loading: false, search: this.props.search }
+                          : { data: [], loading: true, search: this.props.search })
     }
   }
 
@@ -50,7 +56,7 @@ class Cards extends React.Component {
           !this.state.data || this.state.data?.length === 0 ? <NotFound text={"Nenhuma oferta foi encontrada"} /> :
             <div className={styles.cardsContainer}>
               {this.state.data.map((data) => (
-                <Card props={data} key={data.__id} />
+                <Card data={data} key={data._id} />
               ))}
             </div>
         )}
