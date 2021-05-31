@@ -6,10 +6,10 @@ import React, { useEffect, useState } from 'react'
 import queryString from 'query-string';
 
 const Home = (props) => {
-  const [search, setSearch] = useState(queryString.parse(props.location.search).search)
+  const [search, setSearch] = useState(queryString.parse(props.location?.search)?.search)
 
   useEffect(() => {
-    setSearch(queryString.parse(props.location.search).search)
+    setSearch(queryString.parse(props.location?.search)?.search)
   }, [props.location.search]);
 
   return (
