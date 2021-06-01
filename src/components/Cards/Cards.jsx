@@ -23,6 +23,10 @@ class Cards extends React.Component {
     if (this.state.loading) { this.getOffersFromApi() }
   }
 
+  componentDidMount() {
+    if (this.state.loading) { this.getOffersFromApi() }
+  }
+
   getOffersFromApi = () => {
     const cache = sessionStorage.getItem('@pav/offers')
     if (cache && !this.state.search) {
