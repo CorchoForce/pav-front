@@ -1,0 +1,16 @@
+.signInContainer {
+  width: min(700px, 85vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #0B5471;
+  border-radius: 20px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding: 1em;
+}
+
+.logo {
+  width: min(300px, 50%);
+}
