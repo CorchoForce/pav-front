@@ -17,4 +17,6 @@ const getOffers = (text) => {
 
 const getOffer = (id) => (apiClient.get('/offer/' + id))
 
-export { getOffers, getOffer } 
+const isLoggedIn = () => (false)
+
+export { getOffers, getOffer, isLoggedIn } 
