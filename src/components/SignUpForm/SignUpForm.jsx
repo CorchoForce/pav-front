@@ -1,32 +1,63 @@
 import styles from './SignUpForm.module.css'
 import { useState } from 'react'
 import { cpfMask } from '../../utils/mask'
+import { register } from '../../utils/api'
+import { Loading } from '..'
+import { Redirect } from 'react-router-dom'
+
 
 const SignUpForm = () => {
-  const [email, setEmail] = useState(undefined)
-  const [password, setPassword] = useState(undefined)
-  const [name, setName] = useState(undefined)
-  const [cpf, setCpf] = useState(undefined)
+  const [user, setUser] = useState({})
+  const [loading, setLoading] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('@pav/user') ? true : false)
+  const [errorMessage, setErrorMessage] = useState(undefined)
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log("fazer cadastro com senha = " + password + " e email = " + email + " e nome = " + name + "e cpf = " + cpf)
+    setLoading(true)
+    register(user).then((response) => {
+      localStorage.setItem('@pav/user', JSON.stringify(response.data.user))
+      localStorage.setItem('@pav/userToken', JSON.stringify(response.data.token))
+      setErrorMessage(undefined)
+      setLoggedIn(true)
+    }).catch((error) => {
+      if (error.response?.status === 420) {
+        setErrorMessage(error.response.data.message)
+      } else {
+        setErrorMessage("Ocorreu um erro inesperado. :(")
+      }
+      setLoading(false)
+    })
+    console.log("fazer cadastro com senha = " + user.password + " e email = " + user.email + " e nome = " + user.name + "e cpf = " + user.cpf)
   }
 
-  const inputHandler = (event, setter) => {
-    setter(event.target.value)
+  if (loggedIn) {
+    if (loading) {
+      setLoading(false)
+      window.location.reload()
+    } else {
+      return <Redirect to='/'/>
+    }
+  }
+
+  if (loading) {
+    return <Loading />
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <input className={styles.formInput} type="text" onChange={(e) => inputHandler(e, setName)} placeholder="Nome" required />
-      <input className={styles.formInput} type="email" onChange={(e) => inputHandler(e, setEmail)} placeholder="Email" required />
-      <input className={styles.formInput} type="password" onChange={(e) => inputHandler(e, setPassword)} placeholder="Senha" required />
-      <input className={styles.formInput} maxLength='14' type="text" onChange={(e) => setCpf(cpfMask(e.target.value))} placeholder="CPF" required />
-      <button className={styles.formButton} type="submit">
-        Registrar!
-      </button>
-    </form>
+    <div className={styles.wrap}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input className={styles.formInput} type="text" onChange={(e) => setUser({...user, name: e.target.value})} placeholder="Nome" required />
+        <input className={styles.formInput} type="email" onChange={(e) => setUser({...user, email: e.target.value})} placeholder="Email" required />
+        <input className={styles.formInput} type="password" onChange={(e) => setUser({...user, password: e.target.value})} placeholder="Senha" required />
+        <input className={styles.formInput} maxLength='14' type="text" onChange={(e) => setUser({...user, CPF: cpfMask(e.target.value)} )} placeholder="CPF" required />
+        <button className={styles.formButton} type="submit">
+          Registrar!
+        </button>
+      </form>
+      {errorMessage ? <p className={styles.errorMessage}>{errorMessage}</p> : undefined }
+    </div>
+
   )
 }
 
