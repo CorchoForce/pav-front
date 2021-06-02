@@ -1,11 +1,12 @@
 import React from 'react'
 import logo from "../images/navbar_logo.png";
 import { RegisterOfferForm } from '../components'
+import styles from '../styles/SignIn.module.css'
 
 const Register = () => {
     return (
-        <div>
-            <img src={logo} alt="PAV Main Logo" />
+        <div className={styles.signInContainer}>
+            <img src={logo} alt="PAV Main Logo" className={styles.logo}/>
             <RegisterOfferForm />
             <p style={{ fontWeight: "bold" }}>
                 Cadastre sua empresa
