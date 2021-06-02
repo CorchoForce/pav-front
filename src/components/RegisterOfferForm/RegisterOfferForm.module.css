@@ -35,5 +35,7 @@
 }
 
 .dateWrapper {
-  color: #333;
+  color: #000;
+  text-align:center;
+  font-weight: bold;
 }
