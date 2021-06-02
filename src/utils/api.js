@@ -43,4 +43,10 @@ const getOffer = (id) => (apiClient.get('/offer/' + id))
 
 const isLoggedIn = () => (localStorage.getItem('@pav/user') ? true : false)
 
-export { getOffers, getOffer, register, login, isLoggedIn } 
+const logout = () => {
+  localStorage.removeItem('@pav/user')
+  localStorage.removeItem('@pav/userToken')
+  window.location.reload()
+}
+
+export { getOffers, getOffer, register, login, isLoggedIn, logout } 

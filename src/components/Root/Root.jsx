@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { About, Home, OfferDetails, SignIn, SignUp, Register } from "../../pages";
+import { About, Home, OfferDetails, SignIn, SignUp, Register, MyOffers } from "../../pages";
 import { Layout, NotFound } from "..";
 
 const Root = () => (
@@ -14,6 +14,7 @@ const Root = () => (
         {/* <Route sensitive exact path="/forgot_password" component={ForgotPassword} /> */}
         <Route sensitive exact path="/about" component={About} />
         <Route sensitive exact path="/offer/:id" render={(props) => <OfferDetails {...props} />} />
+        <Route sensitive exact path="/my_offers" component={MyOffers}/>
         <Route path="*" render={() => <NotFound text={"Página não encontrada"} />} />
       </Switch>
     </Layout>
