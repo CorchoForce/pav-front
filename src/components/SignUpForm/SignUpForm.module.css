@@ -1,7 +1,11 @@
+.wrap {
+  width: 50%
+}
+
 
 .form {
   display: flex;
-  width: 50%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -33,4 +37,9 @@
 
 .formButton:hover {
   background-color: #EFEFEF;
+}
+
+.errorMessage {
+  color: hsl(49, 100%, 62%);
+  text-align: center;
 }
