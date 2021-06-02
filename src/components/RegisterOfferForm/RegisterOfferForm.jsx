@@ -9,9 +9,15 @@ const RegisterOfferForm = () => {
       <input className={styles.formInput} type="text" placeholder="Site" />
       <input className={styles.formInput} type="text" placeholder="Tags" required />
       <input className={styles.formInput} type="text" placeholder="Descrição" required />
-      <input className={styles.formInput} type="date" placeholder="Data Limite para aplicação" required />
+      <div className = {styles.dateWrapper}>
+        <label>Data limite para aplicação</label>
+        <input className={styles.formInput} type="date" required />
+      </div>
       <input className={styles.formInput} type="text" placeholder="Salário"required />
-      <input className={styles.formInput} type="date" placeholder="Data de Início" required />
+      <div className = {styles.dateWrapper}>
+        <label>Data de Ingresso</label>
+        <input className={styles.formInput} type="date" required />
+      </div>
       <input className={styles.formInput} type="text" placeholder="Localização" required />
       <input className={styles.formInput} type="text" placeholder="Horas necessárias" required />
       <input className={styles.formInput} type="text" placeholder="Email para contato" required />
