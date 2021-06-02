@@ -8,7 +8,7 @@ const MenuItems = () => {
       <MenuItem link="/" text="Home" />
       <MenuItem link="/about" text="Sobre" />
       {isLoggedIn() ? <MenuItem link="/my_offers" text="Minhas Ofertas" /> : <MenuItem link="/sign_in" text="Login" /> }
-      {isLoggedIn() ? <button onClick={logout} className={styles.menu}> Sair </button>  : undefined }
+      {isLoggedIn() ? <MenuItem onClickFunction={logout} text="Sair" /> : undefined }
     </ul>
   );
 };
