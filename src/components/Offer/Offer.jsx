@@ -24,10 +24,6 @@ const Offer = ({ props }) => {
       text: props.neededHours
     },
     {
-      value: "Ofertador da vaga: ",
-      text: props.user.description
-    },
-    {
       value: "Localização: ",
       text: props.localization
     },
@@ -45,24 +41,24 @@ const Offer = ({ props }) => {
     <div className={styles.offerContainer}>
       <h1 className={styles.title}>{props.title}</h1>
       <div className={styles.offerInfo}>
-        {selectedInfo.map(({value, text, ...rest}) => (
+        {selectedInfo.map(({ value, text, ...rest }) => (
           <Detail value={value} text={text} />
         ))}
         <p>
           <b>{"Email de contato: "}</b>
-          <a href={"mailto:" + props.user.email} className={styles.email}>
-            {props.user.email}
+          <a href={"mailto:" + props.contactEmail} className={styles.email}>
+            {props.contactEmail}
           </a>
         </p>
         <p>
           <b>{"Website: "}</b>
-          <a href={"http://"+props.site} className={styles.email}>
+          <a href={"http://" + props.site} className={styles.email}>
             {props.site}
           </a>
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 export default Offer
