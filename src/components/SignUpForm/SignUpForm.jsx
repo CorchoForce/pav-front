@@ -1,7 +1,7 @@
 import styles from './SignUpForm.module.css'
 import { useState } from 'react'
 import { cpfMask } from '../../utils/mask'
-import { register } from '../../utils/api'
+import { register, isLoggedIn } from '../../utils/api'
 import { Loading } from '..'
 import { Redirect } from 'react-router-dom'
 
@@ -9,14 +9,14 @@ import { Redirect } from 'react-router-dom'
 const SignUpForm = () => {
   const [user, setUser] = useState({})
   const [loading, setLoading] = useState(false)
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('@pav/user') ? true : false)
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn())
   const [errorMessage, setErrorMessage] = useState(undefined)
 
   const handleSubmit = (event) => {
     event.preventDefault()
     setLoading(true)
     register(user).then((response) => {
-      localStorage.setItem('@pav/user', JSON.stringify(response.data.user))
+      JSON.stringify(response.data.user)
       localStorage.setItem('@pav/userToken', JSON.stringify(response.data.token))
       setErrorMessage(undefined)
       setLoggedIn(true)
@@ -28,7 +28,6 @@ const SignUpForm = () => {
       }
       setLoading(false)
     })
-    console.log("fazer cadastro com senha = " + user.password + " e email = " + user.email + " e nome = " + user.name + "e cpf = " + user.cpf)
   }
 
   if (loggedIn) {

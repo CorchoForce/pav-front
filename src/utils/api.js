@@ -41,7 +41,7 @@ const login = ({email, password}) => {
 
 const getOffer = (id) => (apiClient.get('/offer/' + id))
 
-const isLoggedIn = () => (localStorage.getItem('@pav/user') ? true : false)
+const isLoggedIn = () => (localStorage.getItem('@pav/userToken') ? true : false)
 
 const logout = () => {
   localStorage.removeItem('@pav/user')
