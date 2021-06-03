@@ -4,7 +4,7 @@ const { REACT_APP_API_URL } = process.env;
 const apiClient = axios.create(
   {
     baseURL: REACT_APP_API_URL || "http://localhost:8080",
-    responseType: 'json' 
+    responseType: 'json'
   }
 )
 
@@ -15,7 +15,7 @@ const getOffers = (text) => {
   )
 }
 
-const register = ({name, email, password, CPF}) => {
+const register = ({ name, email, password, CPF }) => {
   return (
     apiClient.post('/register',
       {
@@ -28,7 +28,7 @@ const register = ({name, email, password, CPF}) => {
   )
 }
 
-const login = ({email, password}) => {
+const login = ({ email, password }) => {
   return (
     apiClient.post('/login',
       {
@@ -43,4 +43,4 @@ const getOffer = (id) => (apiClient.get('/offer/' + id))
 
 const isLoggedIn = () => (localStorage.getItem('@pav/user') ? true : false)
 
-export { getOffers, getOffer, register, login, isLoggedIn } 
+export { getOffers, getOffer, register, login, isLoggedIn }
