@@ -69,8 +69,4 @@ const logout = () => {
   window.location.reload()
 }
 
-<<<<<<< HEAD
-export { getOffers, getOffer, register, login, isLoggedIn }
-=======
 export { getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer } 
->>>>>>> my-profile
