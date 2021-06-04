@@ -1,5 +1,5 @@
 import { Card, Loading } from ".."
-import { getOffers } from "../../utils/api"
+import { getOffers, deleteOffer } from "../../utils/api"
 import { useState, useEffect } from 'react'
 import styles from './MyCards.module.css'
 import trash from '../../images/trash.svg'
@@ -8,8 +8,20 @@ const MyCards = () => {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState([])
 
+  const filteredData = (offers, id) => {
+    return offers.filter(x => (x._id !== id))
+  }
+  
   const deleteCard = (id) => {
-    console.log("DELETAR O AMIGAO")
+    setLoading(true)
+    deleteOffer(id).then(() => {
+      setData(filteredData(data, id))
+      localStorage.removeItem('@pav/offers')
+      setLoading(false)
+    }).catch((error) => {
+      console.log(error)
+      setLoading(false)
+    })
   }
 
   useEffect(() => {
