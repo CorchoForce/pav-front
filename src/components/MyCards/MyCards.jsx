@@ -1,5 +1,5 @@
 import { Card, Loading } from ".."
-import { getOffers, deleteOffer } from "../../utils/api"
+import { getMyOffers, deleteOffer } from "../../utils/api"
 import { useState, useEffect } from 'react'
 import styles from './MyCards.module.css'
 import trash from '../../images/trash.svg'
@@ -25,7 +25,7 @@ const MyCards = () => {
   }
 
   useEffect(() => {
-    getOffers().then((response) =>{
+    getMyOffers().then((response) =>{
       setData(response.data)
       setLoading(false)       
     }).catch(()=>{

@@ -15,6 +15,16 @@ const getOffers = (text) => {
   )
 }
 
+const getMyOffers = () => {
+  return (
+    apiClient.get('/my_offers',  {
+      headers: {
+        'Authorization': "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
+      }
+    })
+  )
+}
+
 const register = ({name, email, password, CPF}) => {
   return (
     apiClient.post('/register',
@@ -59,4 +69,4 @@ const logout = () => {
   window.location.reload()
 }
 
-export { getOffers, getOffer, register, login, isLoggedIn, logout, deleteOffer } 
+export { getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer } 
