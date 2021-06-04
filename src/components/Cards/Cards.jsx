@@ -8,9 +8,6 @@ class Cards extends React.Component {
   constructor(props) {
     super(props)
     this.state = { data: [], loading: true, search: undefined }
-    const cache = sessionStorage.getItem('@pav/offers')
-    this.state = cache ? { data: JSON.parse(cache), loading: false, search: undefined }
-                       : { data: [], loading: true, search: undefined }
   }
 
   handleChange = (event) => (this.setState({ search: event.target.value }))
@@ -28,15 +25,7 @@ class Cards extends React.Component {
   }
 
   getOffersFromApi = () => {
-    const cache = sessionStorage.getItem('@pav/offers')
-    if (cache && !this.state.search) {
-      return this.setState({ data: JSON.parse(cache), loading: false })
-    }
-
     getOffers(this.state.search).then((response) => {
-      if (!this.state.search) {
-        sessionStorage.setItem('@pav/offers', JSON.stringify(response.data));
-      }
       this.setState({data: response.data, loading: false})
     }).catch(() => {
       this.setState({data: [], loading: false})

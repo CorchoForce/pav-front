@@ -7,14 +7,13 @@ import { Redirect } from 'react-router-dom'
 const SignInForm = () => {
   const [user, setUser] = useState({})
   const [loading, setLoading] = useState(false)
-  const [loggedIn, setLoggedIn] = useState(isLoggedIn)
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn())
   const [errorMessage, setErrorMessage] = useState(undefined)
 
   const handleSubmit = (event) => {
     event.preventDefault()
     setLoading(true)
     login(user).then((response) => {
-      localStorage.setItem('@pav/user', JSON.stringify(response.data.user))
       localStorage.setItem('@pav/userToken', JSON.stringify(response.data.token))
       setErrorMessage(undefined)
       setLoggedIn(true)
@@ -26,7 +25,6 @@ const SignInForm = () => {
       }
       setLoading(false)
     })
-    console.log("fazer cadastro com senha = " + user.password + " e email = " + user.email + " e nome = " + user.name + "e cpf = " + user.cpf)
   }
 
   if (loggedIn) {

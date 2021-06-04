@@ -15,7 +15,17 @@ const getOffers = (text) => {
   )
 }
 
-const register = ({ name, email, password, CPF }) => {
+const getMyOffers = () => {
+  return (
+    apiClient.get('/my_offers',  {
+      headers: {
+        'Authorization': "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
+      }
+    })
+  )
+}
+
+const register = ({name, email, password, CPF}) => {
   return (
     apiClient.post('/register',
       {
@@ -41,6 +51,26 @@ const login = ({ email, password }) => {
 
 const getOffer = (id) => (apiClient.get('/offer/' + id))
 
-const isLoggedIn = () => (localStorage.getItem('@pav/user') ? true : false)
+const deleteOffer = (id) => {
+  return (
+    apiClient.delete('/offer/' + id, {
+      headers: {
+        "Authorization": "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
+      }
+    })
+  )
+}
 
+const isLoggedIn = () => (localStorage.getItem('@pav/userToken') ? true : false)
+
+const logout = () => {
+  localStorage.removeItem('@pav/user')
+  localStorage.removeItem('@pav/userToken')
+  window.location.reload()
+}
+
+<<<<<<< HEAD
 export { getOffers, getOffer, register, login, isLoggedIn }
+=======
+export { getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer } 
+>>>>>>> my-profile
