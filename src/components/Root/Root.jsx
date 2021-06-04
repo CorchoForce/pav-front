@@ -7,14 +7,14 @@ const Root = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route sensitive exact path="/" render={(props) => <Home {...props} />} />
-        <Route sensitive exact path="/sign_in" component={SignIn} />
-        <Route sensitive exact path="/sign_up" component={SignUp} />
-        <Route sensitive exact path="/register_offer" component={Register} />
-        {/* <Route sensitive exact path="/forgot_password" component={ForgotPassword} /> */}
-        <Route sensitive exact path="/about" component={About} />
-        <Route sensitive exact path="/offer/:id" render={(props) => <OfferDetails {...props} />} />
-        <Route sensitive exact path="/my_offers" component={MyOffers}/>
+        <Route exact path="/" render={(props) => <Home {...props} />} />
+        <Route exact path="/sign_in" component={SignIn} />
+        <Route exact path="/sign_up" component={SignUp} />
+        <Route exact path="/register_offer" component={Register} />
+        {/* <Route exact path="/forgot_password" component={ForgotPassword} /> */}
+        <Route exact path="/about" component={About} />
+        <Route exact path="/my_offers" component={MyOffers}/>
+        <Route exact path="/offer/:id" render={(props) => <OfferDetails {...props} />} />
         <Route path="*" render={() => <NotFound text={"Página não encontrada"} />} />
       </Switch>
     </Layout>

@@ -1,22 +1,25 @@
 import { Card, Loading } from ".."
 import { getOffers } from "../../utils/api"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './MyCards.module.css'
 import trash from '../../images/trash.svg'
 
 const MyCards = () => {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState([])
+
   const deleteCard = (id) => {
     console.log("DELETAR O AMIGAO")
   }
 
-  getOffers().then((response) =>{
-    setData(response.data)
-    setLoading(false)       
-  }).catch(()=>{
-    setLoading(false)
-  })
+  useEffect(() => {
+    getOffers().then((response) =>{
+      setData(response.data)
+      setLoading(false)       
+    }).catch(()=>{
+      setLoading(false)
+    })
+  }, [])
 
   if (loading) {
     return (<Loading />)
@@ -26,11 +29,11 @@ const MyCards = () => {
     <div className={styles.cardsContainer}>
       {data.map((data) => {
         return (
-          <Card data={data} key={data._id} >
+          <Card data={data} key={data._id}>
             <img src={trash} alt='delete' className={styles.trash} onClick={(e) => {
+              deleteCard(data._id);
               e.preventDefault()
-              deleteCard(data._id)
-            }} />
+            }}/>
           </Card>
         )
       })}

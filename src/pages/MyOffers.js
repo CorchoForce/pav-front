@@ -12,6 +12,7 @@ const MyOffers = () => {
       <Redirect to='/sign_in'/>
     )
   }
+
   return (
     <div style={{
     width: '100%',
