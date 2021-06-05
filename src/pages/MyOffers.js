@@ -1,8 +1,10 @@
 import React from 'react'
 import {
   MyCards
-} from "../components"
-import { Redirect } from 'react-router-dom'
+}  from "../components"
+import style from "../components/MyCards/MyCards.module.css"
+import mais from "../images/mais.svg"
+import { Redirect, Link } from 'react-router-dom'
 import { isLoggedIn } from '../utils/api'
 
 const MyOffers = () => {
@@ -14,16 +16,16 @@ const MyOffers = () => {
   }
 
   return (
-    <div style={{
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    marginTop: '3em',
-    marginLeft: '3em',
-    }}>
-      <MyCards/>
+    <div style={{width:'100%'}}>
+      <div className={ style.my_offers}>
+        <h1 >Minhas Ofertas </h1>
+        <Link to="/register_offer">
+        <img src={mais} alt="Adicionar Oferta" className={style.plus} /> 
+        </Link>
+      </div>
+      <div>
+        <MyCards/>
+      </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { Card, Loading } from ".."
+import { Card, Loading, NotFound } from ".."
 import { getMyOffers, deleteOffer } from "../../utils/api"
 import { useState, useEffect } from 'react'
 import styles from './MyCards.module.css'
@@ -37,20 +37,23 @@ const MyCards = () => {
     return (<Loading />)
   }
 
-  return (
-    <div className={styles.cardsContainer}>
-      {data.map((data) => {
-        return (
-          <Card data={data} key={data._id}>
-            <img src={trash} alt='delete' className={styles.trash} onClick={(e) => {
-              deleteCard(data._id);
-              e.preventDefault()
-            }}/>
-          </Card>
-        )
-      })}
-    </div>
-  )
+  if ((data.length) !== 0)
+    return (
+      <div className={styles.cardsContainer}>
+        {data.map((data) => {
+          return (
+            <Card data={data} key={data._id}>
+              <img src={trash} alt='delete' className={styles.trash} onClick={(e) => {
+                deleteCard(data._id);
+                e.preventDefault()
+              }}/>
+            </Card>
+          )
+        })}
+      </div>
+    )
+  else
+    return (<NotFound text={"Você não possui nenhuma oferta"}/>)
 }
 
 export default MyCards
