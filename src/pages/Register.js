@@ -16,9 +16,6 @@ const Register = () => {
     <div className={styles.signInContainer}>
       <img src={logo} alt="PAV Main Logo" className={styles.logo}/>
       <RegisterOfferForm />
-      <p style={{ fontWeight: "bold" }}>
-        Cadastre sua empresa
-      </p>
     </div>
   )
 }

@@ -61,6 +61,16 @@ const deleteOffer = (id) => {
   )
 }
 
+const createOffer = (body) => {
+  return (
+    apiClient.post('/offer', body, {
+      headers: {
+        "Authorization": "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
+      },
+    })
+  )
+}
+
 const isLoggedIn = () => (localStorage.getItem('@pav/userToken') ? true : false)
 
 const logout = () => {
@@ -69,4 +79,4 @@ const logout = () => {
   window.location.reload()
 }
 
-export { getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer } 
+export { getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer, createOffer } 
