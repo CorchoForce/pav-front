@@ -18,7 +18,7 @@
 .search {
   width: 100%;
   position: relative;
-  display: flex;
+  display: flex
 }
 
 .searchTerm {
@@ -51,15 +51,11 @@
   outline: none;
 }
 
-/*Resize the wrap to see the search bar change!*/
 .wrap {
-  width: 40%
+  width: 40%;
+  margin: auto
 }
 
 .superContainer {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
 }

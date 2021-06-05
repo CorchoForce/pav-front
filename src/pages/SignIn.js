@@ -16,12 +16,12 @@ const SignIn = () => {
           color: "#FFFFFF",
           fontStyle: "italic" }}> Cadastre-se agora! </Link>
       </p>
-      <Link to="/forgot_password" style={{
+      {/* <Link to="/forgot_password" style={{
         color: "#FFF0F0",
         textDecoration: "none",
         fontStyle: "italic" }}>
           Esqueci minha senha...
-      </Link>
+      </Link> */}
     </div>
   )
 }

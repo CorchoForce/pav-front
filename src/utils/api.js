@@ -15,8 +15,58 @@ const getOffers = (text) => {
   )
 }
 
+const getMyOffers = () => {
+  return (
+    apiClient.get('/offer/mine',  {
+      headers: {
+        'Authorization': "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
+      }
+    })
+  )
+}
+
+const register = ({name, email, password, CPF}) => {
+  return (
+    apiClient.post('/register',
+      {
+        "name": name,
+        "email": email,
+        "password": password,
+        "CPF": CPF
+      }
+    )
+  )
+}
+
+const login = ({ email, password }) => {
+  return (
+    apiClient.post('/login',
+      {
+        "email": email,
+        "password": password
+      }
+    )
+  )
+}
+
 const getOffer = (id) => (apiClient.get('/offer/' + id))
 
-const isLoggedIn = () => (false)
+const deleteOffer = (id) => {
+  return (
+    apiClient.delete('/offer/' + id, {
+      headers: {
+        "Authorization": "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
+      }
+    })
+  )
+}
 
-export { getOffers, getOffer, isLoggedIn } 
+const isLoggedIn = () => (localStorage.getItem('@pav/userToken') ? true : false)
+
+const logout = () => {
+  localStorage.removeItem('@pav/user')
+  localStorage.removeItem('@pav/userToken')
+  window.location.reload()
+}
+
+export { getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer } 
