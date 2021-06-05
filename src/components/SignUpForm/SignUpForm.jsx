@@ -21,7 +21,7 @@ const SignUpForm = () => {
       setErrorMessage(undefined)
       setLoggedIn(true)
     }).catch((error) => {
-      if (error.response?.status === 420) {
+      if (error.response?.status === 422) {
         setErrorMessage(error.response.data.message)
       } else {
         setErrorMessage("Ocorreu um erro inesperado. :(")
