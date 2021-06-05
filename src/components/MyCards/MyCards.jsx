@@ -1,8 +1,10 @@
-import { Card, Loading, NotFound, PlusCard } from ".."
+import { Card, Loading, PlusCard } from ".."
 import { getMyOffers, deleteOffer } from "../../utils/api"
 import { useState, useEffect } from 'react'
 import styles from './MyCards.module.css'
 import trash from '../../images/trash.svg'
+import toBeValidated from '../../images/toBeValidated.svg'
+import validated from '../../images/validated.svg'
 
 const MyCards = () => {
   const [loading, setLoading] = useState(true)
@@ -37,24 +39,24 @@ const MyCards = () => {
     return (<Loading />)
   }
 
-  if ((data.length) !== 0)
-    return (
-      <div className={styles.cardsContainer}>
-        <PlusCard />
-        {data.map((data) => {
-          return (
-            <Card data={data} key={data._id}>
+  return (
+    <div className={styles.cardsContainer}>
+      <PlusCard />
+      {data.map((data) => {
+        return (
+          <Card data={data} key={data._id}>
+            <div style={{display: "flex", justifyContent: 'space-between', alignItems: 'center', width: '22%' }}>
+              {data.valid ? <img src={validated} alt='validated' className={styles.trash} /> : <img src={toBeValidated} alt='to be validated' className={styles.trash} />}
               <img src={trash} alt='delete' className={styles.trash} onClick={(e) => {
                 deleteCard(data._id);
                 e.preventDefault()
               }}/>
-            </Card>
-          )
-        })}
-      </div>
-    )
-  else
-    return (<NotFound text={"Você não possui nenhuma oferta"}/>)
+            </div>
+          </Card>
+        )
+      })}
+    </div>
+  )
 }
 
 export default MyCards
