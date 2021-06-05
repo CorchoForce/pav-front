@@ -82,7 +82,7 @@ const RegisterOfferForm = () => {
         <div className={styles.formWrapper}>
           <label>Adicione uma lista de tags para facilitar o encontro da sua oferta!</label>
           <input className={styles.formInput} type="text" onChange={
-            (e) => setOffer({...offer, tags: e.target.value.replace(' ', '').split(',')})
+            (e) => setOffer({...offer, tags: e.target.value.replace(/\s/g, '').split(',')})
             } placeholder="Tags" />
           <p className={styles.tagDescription}>As tags devem ser separadas por , (vírgula)</p>
         </div>
