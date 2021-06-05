@@ -1,4 +1,4 @@
-import { Card, Loading, NotFound } from ".."
+import { Card, Loading, NotFound, PlusCard } from ".."
 import { getMyOffers, deleteOffer } from "../../utils/api"
 import { useState, useEffect } from 'react'
 import styles from './MyCards.module.css'
@@ -40,6 +40,7 @@ const MyCards = () => {
   if ((data.length) !== 0)
     return (
       <div className={styles.cardsContainer}>
+        <PlusCard />
         {data.map((data) => {
           return (
             <Card data={data} key={data._id}>
