@@ -9,3 +9,18 @@
   width: 30px;
 
 }
+.plus {
+  width: 20px;
+  align-items:center;
+
+}
+.my_offers {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row ;
+  align-items: center;
+  height: 30px;
+  padding: 30px 15% 40px 5%;
+
+
+}
