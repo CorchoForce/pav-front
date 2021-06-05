@@ -5,7 +5,7 @@ import { Loading } from '..'
 import { getMyOffers, createOffer } from '../../utils/api'
 
 const RegisterOfferForm = () => {
-  const [offer, setOffer] = useState({});
+  const [offer, setOffer] = useState({ type: 'estagio' });
   const [submit, setSubmit] = useState(false);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -13,7 +13,7 @@ const RegisterOfferForm = () => {
 
   useEffect(() => {
     getMyOffers().then((response) => {
-      setOffer(response.data[0])
+      setOffer(response.data[0] || { type: 'estagio' })
       setLoading(false)
     }).catch(() => {
       setLoading(false)
@@ -56,11 +56,12 @@ const RegisterOfferForm = () => {
           <select className={styles.select} onChange={(e) => {
             if (e.target.value === 'other') {
               setOther(true)
+              setOffer({...offer, type: 'outro'})
             } else {
               setOther(false)
               setOffer({...offer, type: e.target.value})
             }
-          }}>
+          }} required>
             <option value="estagio">Estágio</option>
             <option value="bolsa_ic">Iniciação Científica</option>
             <option value="extensao">Extensão</option>
@@ -99,13 +100,13 @@ const RegisterOfferForm = () => {
         </div>
         <hr />
         <input className={styles.formInput} type="text" onChange={
-          (e) => setOffer({...offer, salary: e.target.value})
+          (e) => setOffer({...offer, pay: e.target.value})
           } placeholder="Remuneração" required />
         <hr />
         <div className = {styles.formWrapper}>
           <label>Data de Ingresso</label>
           <input className={styles.formInput} onChange={
-            (e) => setOffer({...offer, startDate: e.target.value})
+            (e) => setOffer({...offer, beginningDate: e.target.value})
             } type="date" required />
         </div>
         <hr />
