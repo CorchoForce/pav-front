@@ -17,7 +17,7 @@ const getOffers = (text) => {
 
 const getMyOffers = () => {
   return (
-    apiClient.get('/offer/mine',  {
+    apiClient.get('/myoffers',  {
       headers: {
         'Authorization': "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
       }
