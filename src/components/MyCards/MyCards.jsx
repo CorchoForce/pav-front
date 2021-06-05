@@ -37,24 +37,21 @@ const MyCards = () => {
     return (<Loading />)
   }
 
-  if ((data.length) !== 0)
-    return (
-      <div className={styles.cardsContainer}>
-        <PlusCard />
-        {data.map((data) => {
-          return (
-            <Card data={data} key={data._id}>
-              <img src={trash} alt='delete' className={styles.trash} onClick={(e) => {
-                deleteCard(data._id);
-                e.preventDefault()
-              }}/>
-            </Card>
-          )
-        })}
-      </div>
-    )
-  else
-    return (<NotFound text={"Você não possui nenhuma oferta"}/>)
+  return (
+    <div className={styles.cardsContainer}>
+      <PlusCard />
+      {data.map((data) => {
+        return (
+          <Card data={data} key={data._id}>
+            <img src={trash} alt='delete' className={styles.trash} onClick={(e) => {
+              deleteCard(data._id);
+              e.preventDefault()
+            }}/>
+          </Card>
+        )
+      })}
+    </div>
+  )
 }
 
 export default MyCards
