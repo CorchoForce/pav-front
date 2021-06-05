@@ -1,5 +1,5 @@
 const getHumanDate = (date) => (
-  date.getDate().toString() + '/' + (date.getMonth() + 1).toString() + '/' + date.getFullYear().toString()
+  new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1).toLocaleDateString('pt-br')
 )
 
 export { getHumanDate }
