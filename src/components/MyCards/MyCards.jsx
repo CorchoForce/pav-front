@@ -43,14 +43,30 @@ const MyCards = () => {
     <div className={styles.cardsContainer}>
       <PlusCard />
       {data.map((data) => {
+        const iconValues = data.valid ? { img: validated, text: "Esta oferta já foi validada e está disponível para os nossos usuários!", backgroundColor: "#38AF97" }
+                                      : { img: toBeValidated, text: "Esta oferta ainda não foi validada e não está disponível para os nossos usuários.", backgroundColor: "#E6D380" }
         return (
           <Card data={data} key={data._id}>
             <div style={{display: "flex", justifyContent: 'space-between', alignItems: 'center', width: '22%' }}>
-              {data.valid ? <img src={validated} alt='validated' className={styles.trash} /> : <img src={toBeValidated} alt='to be validated' className={styles.trash} />}
-              <img src={trash} alt='delete' className={styles.trash} onClick={(e) => {
-                deleteCard(data._id);
-                e.preventDefault()
-              }}/>
+              <div className={styles.iconWrapper}>
+                <img src={iconValues.img} alt='validated' className={styles.icon} />
+                <div className={styles.iconDescriptionWrapper}> 
+                  <div className={styles.iconDescription} style={{ backgroundColor: iconValues.backgroundColor }}>
+                    <p>{iconValues.text}</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.iconWrapper}>
+                <img src={trash} alt='delete' className={styles.icon} onClick={(e) => {
+                  deleteCard(data._id);
+                  e.preventDefault()
+                }}/>
+                <div className={styles.iconDescriptionWrapper}> 
+                  <div className={styles.iconDescription} style={{ backgroundColor: "#D53A3A" }}>
+                    <p>Cuidado, esta ação apagará esta oferta permanentemente.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </Card>
         )
