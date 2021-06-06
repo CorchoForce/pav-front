@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   MyCards
-} from "../components"
+}  from "../components"
 import { Redirect } from 'react-router-dom'
 import { isLoggedIn } from '../utils/api'
 
@@ -14,15 +14,8 @@ const MyOffers = () => {
   }
 
   return (
-    <div style={{
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    marginTop: '3em',
-    marginLeft: '3em',
-    }}>
+    <div style={{ width:'100%', textAlign: 'center', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <h1>Minhas Ofertas</h1>
       <MyCards/>
     </div>
   )
