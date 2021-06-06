@@ -21,7 +21,7 @@ const SignUpForm = () => {
       setErrorMessage("Confirme seu email! Lembre-se de checar a caixa de spam.")
       setLoading(false)
     }).catch((error) => {
-      if (error.response?.status in [422, 403]) {
+      if ([422, 403].includes(error.response?.status)) {
         setErrorMessage(error.response.data.message);
       } else if (error.response?.status === 418) {
         setErrorMessage(error.response.data.message);
@@ -58,7 +58,7 @@ const SignUpForm = () => {
         </button>
       </form>
       {errorMessage ? <p className={styles.errorMessage}>{errorMessage}</p> : undefined }
-      {buttonSendMail ? <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      {true ? <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <RequestConfirmationButton email={user.email} password={user.password} />
       </div> : undefined}
     </div>
