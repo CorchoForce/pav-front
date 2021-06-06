@@ -1,5 +1,6 @@
+
 .wrap {
-  width: 70%
+  width: 70%;
 }
 
 .form {
@@ -48,7 +49,7 @@
 }
 
 .errorMessage {
-  color: hsl(49, 100%, 62%);
+  color: #c74242;
   text-align: center;
 }
 
@@ -65,7 +66,7 @@
 }
 
 .tagDescription {
-  color:hsl(49, 100%, 62%);
+  color:#4294c7;
   margin: 0;
   font-size: 0.8em;
   padding: 0;
@@ -79,4 +80,5 @@ label {
 
 hr {
   width: 85%;
+  color: steelblue;
 }

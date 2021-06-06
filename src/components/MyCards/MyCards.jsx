@@ -47,7 +47,7 @@ const MyCards = () => {
                                       : { img: toBeValidated, text: "Esta oferta ainda não foi validada e não está disponível para os nossos usuários.", backgroundColor: "#E6D380" }
         return (
           <Card data={data} key={data._id}>
-            <div style={{display: "flex", justifyContent: 'space-between', alignItems: 'center', width: '22%' }}>
+            <div style={{display: "flex", justifyContent: 'space-between', alignItems: 'center', width: '22%',height:'1em' }}>
               <div className={styles.iconWrapper}>
                 <img src={iconValues.img} alt='validated' className={styles.icon} />
                 <div className={styles.iconDescriptionWrapper}> 

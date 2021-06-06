@@ -8,6 +8,7 @@
 
 .icon {
   width: 30px;
+  position:relative;
 }
 
 .plus {
@@ -22,7 +23,8 @@
 .iconDescriptionWrapper {
   width: 100%;
   position: fixed;
-  bottom: 5vh;
+  z-index: 2;
+  bottom: 10vh;
   margin: 1em;
   left: 0;
   display: flex;
@@ -37,7 +39,6 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  z-index: 1;
   height: 1em;
   text-align: center;
   padding: 1em;
