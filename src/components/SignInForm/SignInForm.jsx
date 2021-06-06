@@ -19,9 +19,11 @@ const SignInForm = () => {
       setLoggedIn(true)
     }).catch((error) => {
       if (error.response?.status === 422) {
-        setErrorMessage(error.response.data.message)
+        setErrorMessage(error.response.data.message);
+      } else if (error.response?.status === 403){
+        setErrorMessage(error.response.data.message);
       } else {
-        setErrorMessage("Ocorreu um erro inesperado. :(")
+        setErrorMessage("Ocorreu um erro inesperado. :(");
       }
       setLoading(false)
     })
