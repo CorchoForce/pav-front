@@ -58,11 +58,10 @@ const SignUpForm = () => {
         </button>
       </form>
       {errorMessage ? <p className={styles.errorMessage}>{errorMessage}</p> : undefined }
-      {true ? <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      {buttonSendMail ? <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <RequestConfirmationButton email={user.email} password={user.password} />
       </div> : undefined}
     </div>
-
   )
 }
 
