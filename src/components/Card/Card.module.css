@@ -72,3 +72,32 @@
     align-items:baseline;
     justify-content: space-between;
 }
+
+
+
+.cardMobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: min(300px, 70vw);
+    height: min(750px, 70vw);
+    border-radius: 15px;
+    padding: 20px;
+
+    background-image:linear-gradient(rgba(0,0,0,0),rgba(133,183,214, 1)20%,rgba(133,183,214, 1)), url(../../images/navbar_logo.png);
+    background-size: contain;
+
+
+    overflow: hidden;
+}
+
+.cardContentMobile{
+    font-size: 1.4vh;
+    transform: translateY(0);
+}
+
+.extraContentMobile{
+
+    font-size: 1.4vh;
+    transform: translateY(-20px);
+}

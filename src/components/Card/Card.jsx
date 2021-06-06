@@ -1,6 +1,12 @@
 import styles from './Card.module.css'
 import { Link } from 'react-router-dom'
 import { Detail } from '..'
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 const Card = ({ data, children }) => {
   const colors = {
@@ -35,24 +41,46 @@ const Card = ({ data, children }) => {
 
   return (
     <Link to={'/offer/' + data._id} className={styles.link}>
-      <div className={styles.card}>
-        <div className={styles.overheader}>
-          <span style={{ backgroundColor: backgroundColor }} className={styles.type}>{data.type}</span>
-          {children}
+      <BrowserView>
+        <div className={styles.card}>
+          <div className={styles.overheader}>
+            <span style={{ backgroundColor: backgroundColor }} className={styles.type}>{data.type}</span>
+            {children}
+          </div>
+        
+          <div className={styles.cardContent}>
+          <h2 className={styles.title}>{data.title}</h2>
+          {descriptionInfo.map(({value, text, ...rest}) => (
+            <Detail value={value} text={text} />
+          ))}
+          </div>
+          <div className={styles.extraContent}>
+          {selectedInfo.map(({value, text, ...rest}) => (
+            <Detail value={value} text={text} />
+          ))}
+          </div>
         </div>
-      
-        <div className={styles.cardContent}>
-        <h2 className={styles.title}>{data.title}</h2>
-        {descriptionInfo.map(({value, text, ...rest}) => (
-          <Detail value={value} text={text} />
-        ))}
+      </BrowserView>
+      <MobileView>
+        <div className={styles.cardMobile}>
+          <div className={styles.overheader}>
+            <span style={{ backgroundColor: backgroundColor }} className={styles.type}>{data.type}</span>
+            {children}
+          </div>
+        
+          <div className={styles.cardContentMobile}>
+          <h2 className={styles.title}>{data.title}</h2>
+          {descriptionInfo.map(({value, text, ...rest}) => (
+            <Detail value={value} text={text} />
+          ))}
+          </div>
+          <div className={styles.extraContentMobile}>
+          {selectedInfo.map(({value, text, ...rest}) => (
+            <Detail value={value} text={text} />
+          ))}
+          </div>
         </div>
-        <div className={styles.extraContent}>
-        {selectedInfo.map(({value, text, ...rest}) => (
-          <Detail value={value} text={text} />
-        ))}
-        </div>
-      </div>
+      </MobileView>
     </Link>
   )  
 }
