@@ -14,23 +14,24 @@ const Card = ({ data, children }) => {
   const descriptionInfo = [
     {
       value: "Descrição: ",
-      text: data.description.length > 150 ? data.description.slice(0, 150) + '...' : data.description
+      text: data.description.length > 120 ? data.description.slice(0, 120) + '...' : data.description
     }
   ]
   const selectedInfo = [
     {
       value: "Requisitos: ",
-      text: data.requirements.length > 100 ? data.requirements.slice(0, 150) + '...' : data.requirements
+      text: data.requirements.length > 100 ? data.requirements.slice(0, 100) + '...' : data.requirements
     },
     {
       value: "Remuneração: ",
-      text: data.pay
+      text: data.pay.length > 30 ? data.pay.slice(0, 30) + '...' : data.pay
     },
     {
       value: "Carga horária: ",
       text: data.neededHours
     }
   ]
+
 
   return (
     <Link to={'/offer/' + data._id} className={styles.link}>
