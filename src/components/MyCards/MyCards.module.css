@@ -22,7 +22,7 @@
 .iconDescriptionWrapper {
   width: 100%;
   position: fixed;
-  top: 10vh;
+  bottom: 5vh;
   margin: 1em;
   left: 0;
   display: flex;
