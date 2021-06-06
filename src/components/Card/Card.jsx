@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 import { Detail } from '..'
 import {
   BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile
+  MobileView
 } from "react-device-detect";
 
 const Card = ({ data, children }) => {
