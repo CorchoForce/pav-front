@@ -1,8 +1,11 @@
+
+
 .title {
     margin-top: 5px;
     text-align: center;
     font-weight: bold;
 }
+
 
 .type {
     width: max-content;
@@ -11,21 +14,49 @@
     text-align: center;
 }
 
+
 .card {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: min(300px, 70vw);
-    height: 90%;
-    border-radius: 20px;
-    background-color: #85B7D6;
+    height: min(400px, 70vw);
+    border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
-    transition: 0.3s;
+    transition: 0.2s;
+    transition: transform 0.4s ease;
     padding: 20px;
+
+    background-image:linear-gradient(rgba(0,0,0,0),rgba(133,183,214, 1)45%,rgba(133,183,214, 1)), url(../../images/404_logo.png);
+    background-size: contain;
+
+
+    overflow: hidden;
 }
+
 
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(11, 84, 160, 1);
+
+    background-image:linear-gradient(rgba(0,0,0,0),rgba(133,183,214, 1)30%,rgba(133,183,214, 1)), url(../../images/404_logo.png);
+    background-size: contain;
+    transform: scale(106%);
+}
+.cardContent{
+    transform: translateY(150px);
+    transition: 0.5s ease;
+}
+.card:hover .cardContent{
+    transform: translateY(0);
+}
+
+.extraContent{
+    transform:translateY(250px);
+    transition: 0.6s ease;
+}
+
+.card:hover .extraContent{
+    transform: translateY(0);
 }
 
 .link {
@@ -33,8 +64,10 @@
     text-decoration: none;
     color: #000000; 
 }
+
+
 .overheader {
     display: flex;
-    align-items: ;
+    align-items:baseline;
     justify-content: space-between;
 }
