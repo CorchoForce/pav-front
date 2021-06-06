@@ -13,7 +13,8 @@ const RegisterOfferForm = () => {
 
   useEffect(() => {
     getMyOffers().then((response) => {
-      setOffer(response.data[0] || { type: 'estagio' })
+      const { site, localization, contactEmail } = response.data[0]
+      setOffer({ site: site, localization: localization, contactEmail: contactEmail, type: 'estagio' })
       setLoading(false)
     }).catch(() => {
       setLoading(false)
