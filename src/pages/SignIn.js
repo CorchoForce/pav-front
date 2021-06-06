@@ -13,7 +13,7 @@ const SignIn = () => {
         Não possui conta?
         <Link to="/sign_up" style={{
           textDecoration: "none",
-          color: "#FFFFFF",
+          color: "#4294c7",
           fontStyle: "italic" }}> Cadastre-se agora! </Link>
       </p>
       {/* <Link to="/forgot_password" style={{
