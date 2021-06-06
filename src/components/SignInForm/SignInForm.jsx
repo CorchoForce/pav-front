@@ -38,7 +38,6 @@ const SignInForm = () => {
 
   if (loading) {
     return <Loading />
-  } else if (loggedIn) {
   }
 
   return (
