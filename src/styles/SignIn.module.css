@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #0B5471;
+  background-color: hsl(197, 82%, 24%, 0.1);
   border-radius: 20px;
   margin-top: 3em;
   margin-bottom: 3em;

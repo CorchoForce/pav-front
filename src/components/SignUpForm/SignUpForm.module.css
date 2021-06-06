@@ -40,6 +40,6 @@
 }
 
 .errorMessage {
-  color: hsl(49, 100%, 62%);
+  color: #c74242;
   text-align: center;
 }

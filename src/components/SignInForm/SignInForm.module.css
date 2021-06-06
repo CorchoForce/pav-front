@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 1em;
 }
 
@@ -39,6 +39,6 @@
 }
 
 .errorMessage {
-  color: hsl(49, 100%, 62%);
+  color: #c74242;
   text-align: center;
 }
