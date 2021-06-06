@@ -1,5 +1,6 @@
 import styles from './SignInForm.module.css'
 import { useState } from 'react'
+import { RequestConfirmationButton } from '..'
 import { login, isLoggedIn } from '../../utils/api'
 import { Loading } from '..'
 import { Redirect } from 'react-router-dom'
@@ -8,6 +9,7 @@ const SignInForm = () => {
   const [user, setUser] = useState({})
   const [loading, setLoading] = useState(false)
   const [loggedIn, setLoggedIn] = useState(isLoggedIn())
+  const [buttonSendMail, setButtonSendMail] = useState(false)
   const [errorMessage, setErrorMessage] = useState(undefined)
 
   const handleSubmit = (event) => {
@@ -22,6 +24,7 @@ const SignInForm = () => {
         setErrorMessage(error.response.data.message);
       } else if (error.response?.status === 403){
         setErrorMessage(error.response.data.message);
+        setButtonSendMail(true)
       } else {
         setErrorMessage("Ocorreu um erro inesperado. :(");
       }
@@ -52,6 +55,9 @@ const SignInForm = () => {
         </button>
       </form>
       {errorMessage ? <p className={styles.errorMessage}>{errorMessage}</p> : undefined }
+      {buttonSendMail ? <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <RequestConfirmationButton email={user.email} password={user.password} />
+      </div> : undefined}
     </div>
   )
 }

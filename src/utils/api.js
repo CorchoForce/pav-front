@@ -73,7 +73,7 @@ const createOffer = (body) => {
 
 const verifyEmail = (token) => {
   return (
-      apiClient.post('/verify', {},{
+      apiClient.post('/mail/verify', {},{
         headers: {
           "Authorization": "Bearer " + token
         }
@@ -84,7 +84,7 @@ const verifyEmail = (token) => {
 
 const sendEmail = (email, senha) => {
   return (
-    apiClient.post('/verify', 
+    apiClient.post('/mail/send', 
       {
         "email": email,
         "senha": senha,

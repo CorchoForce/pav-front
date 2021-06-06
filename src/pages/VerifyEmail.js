@@ -1,8 +1,8 @@
 import React from 'react'
-import {Loading} from "../components"
-import { Redirect } from 'react-router-dom'
+import { Loading } from "../components"
+import { Redirect, useLocation } from 'react-router-dom'
 import { isLoggedIn, verifyEmail } from '../utils/api'
-import { useState, useLocation, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import queryString from 'query-string'
 
 const VerifyEmail = () => {
