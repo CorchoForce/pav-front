@@ -1,8 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .aboutContainer {
+  display: flex;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1200px));
+  grid-auto-rows: 240px;
   width: 90%;
   min-height: 80vh;
+  background-size: 10em;
+  background-repeat: no-repeat;
+  padding: 10vh;
+
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+}
+
+
+.contentContainer{
+  width: 50%;
+}
+
+
+.line{
+width: 0;
+height: 80%px;
+
+border: 1px solid #000000;
+
 }
 
 .title {
+
+  display: flex;
   font-size: 5em;
+}
+
+.gridContainer{
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 150px;
+
+  width: 50%;
+  padding-top: 5%;
+
+}
+
+.gridElement1{
+  grid-row: span 2 / auto;
+  grid-column: span 2 / auto;
+  background-image: url(../images/PV.jpg);
+  background-size:cover;
+}
+.gridElement2{
+  background-image: url(../images/CT.jpg);
+  background-size: cover;
+}
+.gridElement3{
+  background-image: url(../images/REITORIA.jpg);
+  background-size: cover;
+}
+.gridElement4{
+  grid-column: span 2 / auto;
+  background-image: url(../images/entrada-da-ufrj.jpg);
+  background-size: cover;
+
+}
+.gridElement5{
+  background-image: url(../images/FND.jpg);
+  background-size: cover;
 }
