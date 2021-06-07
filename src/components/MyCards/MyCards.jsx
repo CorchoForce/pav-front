@@ -21,7 +21,6 @@ const MyCards = () => {
       localStorage.removeItem('@pav/offers')
       setLoading(false)
     }).catch((error) => {
-      console.log(error)
       setLoading(false)
     })
   }

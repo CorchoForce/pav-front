@@ -71,6 +71,28 @@ const createOffer = (body) => {
   )
 }
 
+const verifyEmail = (token) => {
+  return (
+      apiClient.post('/mail/verify', {},{
+        headers: {
+          "Authorization": "Bearer " + token
+        }
+      }
+    )
+  )
+}
+
+const sendEmail = (email, senha) => {
+  return (
+    apiClient.post('/mail/send', 
+      {
+        "email": email,
+        "senha": senha,
+      }
+    )
+  )
+}
+
 const isLoggedIn = () => (localStorage.getItem('@pav/userToken') ? true : false)
 
 const logout = () => {
@@ -79,4 +101,4 @@ const logout = () => {
   window.location.reload()
 }
 
-export { getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer, createOffer } 
+export { verifyEmail, sendEmail, getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer, createOffer }
