@@ -19,7 +19,7 @@ const VerifyEmail = () => {
         }).catch(() => {
             setLoading(false)
         }) 
-    }, [])
+    }, [emailToken])
 
     if (isLoggedIn()) return (<Redirect to='/' />)
     if (loading) return (<Loading/>)
