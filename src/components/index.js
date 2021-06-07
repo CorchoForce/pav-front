@@ -16,3 +16,4 @@ export { default as ForgotPasswordForm } from './ForgotPasswordForm/ForgotPasswo
 export { default as RegisterOfferForm } from './RegisterOfferForm/RegisterOfferForm'
 export { default as MyCards } from './MyCards/MyCards'
 export { default as PlusCard } from './PlusCard/PlusCard'
+export { default as RequestConfirmationButton } from './RequestConfirmationButton/RequestConfirmationButton'
