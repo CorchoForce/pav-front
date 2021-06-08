@@ -20,33 +20,9 @@
 
 .overall{
   display: grid;
-
 }
 
-.firstContainer {
-  display: flex;
-  gap: 1rem;
-
-  grid-template-columns: repeat(auto-fit, minmax(20px, 1200px));
-  grid-auto-rows: 240px;
-  width: 90%;
-  min-height: 80vh;
-  background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/PV.jpeg);
-  background-size:cover;
-  background-repeat: no-repeat;
-  padding: 10vh;
-
-  font-family: 'Overpass Mono', monospace;
-
-}
-
-
-.contentContainer{
-  width: 50%;
-  color: aliceblue;
-  
-}
-
+@media  screen and (min-width: 600px) {
 
 .line{
 width: 0;
@@ -66,41 +42,6 @@ border: 1px solid #ffff;
   animation: fadeIn 1s ease-in-out;
 }
 
-.gridContainer{
-  display: grid;
-  gap: 1rem;
-
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 150px;
-
-  width: 50%;
-  padding-top: 20%;
-
-  font-family: 'Overpass Mono', monospace;
-  font-size: 4vh;
-
-  color: #ffff;
-  text-shadow: 2px 2px 1px #000000;
-
-
-  -webkit-animation: fadeIn 1s ease-in-out;
-  -moz-animation: fadeIn 1s ease-in-out;
-  -o-animation: fadeIn 1s ease-in-out;
-  animation: fadeIn 1s ease-in-out;
-
-}
-
-
-.secondContainer{
-  display: flex;
-  background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.3),rgba(0,0,0,1)), url(../images/CT.jpg);
-  background-size:cover;
-  background-repeat: no-repeat;
-  padding: 10vh;
-
-  width: 90%;
-  min-height: 80vh;
-}
 
 .titleLeft {
   display: flex;
@@ -116,8 +57,39 @@ border: 1px solid #ffff;
 }
 
 
+.firstContainer {
+  display: flex;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1200px));
+  grid-auto-rows: 240px;
+  width: 90%;
+  min-height: 80vh;
+  background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/PV.jpeg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  padding: 10vh;
+
+  font-family: 'Overpass Mono', monospace;
+
+}
+
+
+.secondContainer{
+  display: flex;
+  background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.3),rgba(0,0,0,1)), url(../images/CT.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  padding: 10vh;
+
+  width: 90%;
+  min-height: 80vh;
+}
+
+
 .thirdContainer{
   display: flex;
+  gap: 1rem;
   background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/REITORIA.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -129,6 +101,7 @@ border: 1px solid #ffff;
 
 .fourthContainer{
   display: flex;
+  gap: 1rem;
   background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/FND.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -138,12 +111,26 @@ border: 1px solid #ffff;
   min-height: 80vh;
 }
 
-.gridContainerSecond{
-  display: grid;
-  gap: 1rem;
+.gridContainer{
 
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 150px;
+  width: 50%;
+  padding-top: 20%;
+
+  font-family: 'Overpass Mono', monospace;
+  font-size: 5vh;
+
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 1px #000000;
+
+
+  -webkit-animation: fadeIn 1s ease-in-out;
+  -moz-animation: fadeIn 1s ease-in-out;
+  -o-animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+
+}
+
+.gridContainerSecond{
 
   width: 40%;
   padding-top: 5%;
@@ -157,11 +144,6 @@ border: 1px solid #ffff;
 }
 
 .gridContainerThird{
-  display: grid;
-  gap: 1rem;
-
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 150px;
 
   width: 45%;
   padding-top: 5%;
@@ -176,11 +158,6 @@ border: 1px solid #ffff;
 
 
 .gridContainerFourth{
-  display: grid;
-  gap: 1rem;
-
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 150px;
 
   width: 40%;
   padding-top: 20%;
@@ -191,4 +168,133 @@ border: 1px solid #ffff;
 
   color: #ffff;
   text-shadow: 3px 3px 3px #000000;
+}
+
+}
+
+@media screen and  (max-width: 599px){
+  
+
+.firstContainer{
+  background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(../images/PV.jpeg);
+  background-size: cover;
+  height: 35vh;
+}
+
+.titleRight{
+  color: aliceblue;
+  text-shadow: 3px 5px 8px black;
+}
+
+.gridContainer{
+  color: aliceblue;
+  font-family: monospace;
+  font-size: 2vh;
+  text-shadow: 3px 5px 8px black;
+}
+
+.secondContainer{
+  background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/CT.jpg);
+  background-size: cover;
+  height: 50vh;
+}
+
+.titleLeft{
+  color: aliceblue;
+  text-shadow: 3px 5px 8px black;
+}
+
+.gridContainerSecond{
+  color: aliceblue;
+  font-family: monospace;
+  font-size: 2vh;
+  text-shadow: 1px 2px 1px black;
+}
+
+.gridContainerSecond::before{
+  width: 100%;
+  height: 0vh;
+  border: 2px solid azure;
+}
+
+.thirdContainer{
+    background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/REITORIA.jpg);
+    background-size: cover;
+    height: 40vh;
+}
+
+.gridContainerThird{
+  color: aliceblue;
+  font-family: monospace;
+  font-size: 2vh;
+  text-shadow: 3px 5px 8px black;
+
+}
+
+.fourthContainer{
+  background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/FND.jpg);
+  background-size: cover;
+  height: 40vh;
+}
+
+.gridContainerFourth{
+  color: aliceblue;
+  font-family: monospace;
+  font-size: 2vh;
+  text-shadow: 3px 5px 8px black;
+
+}
+}
+
+.spacer{
+  width: 50%;
+}
+
+.mobileFirstContainer{
+  background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.1)), url(../images/PV.jpeg);
+  background-size: cover;
+  height: 35vh;
+  width: 100vw;
+  height: 80vh;
+  transform:translateY(1px);
+}
+.mobileSecondContainer{
+    background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/CT.jpg);
+    background-size: cover;
+    height: 35vh;
+    width: 100vw;
+    height: 100vh;
+}
+.mobileThirdContainer{
+    background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/REITORIA.jpg);
+    background-size: cover;
+    height: 35vh;
+    width: 100vw;
+    height: 80vh;
+}
+.mobileFourthContainer{
+    background-image:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0),rgba(0,0,0,1)), url(../images/FND.jpg);
+    background-size: cover;
+    height: 35vh;
+    width: 100vw;
+    height: 80vh;
+}
+
+.mobileSmallGridCountainer{
+  font-family: monospace;
+  font-size: 4vh;
+  color: aliceblue;
+  text-shadow: 0px 2px 2px black;
+  padding-left: 5%;
+  padding-top:10%;
+}
+
+
+.mobileBiggerGridCountainer{
+  font-family: monospace;
+  font-size: 3vh;
+  color: aliceblue;
+  text-shadow: 0px 2px 2px black;
+  padding-left: 5%;
+  padding-top:10%;
 }
