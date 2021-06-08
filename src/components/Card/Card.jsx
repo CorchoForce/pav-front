@@ -7,14 +7,15 @@ import {
 } from "react-device-detect";
 
 const Card = ({ data, children }) => {
-  const colors = {
-    "estagio": "#CC66CC",
-    "bolsa_ic": "#72f542",
-    "extensao": "#FFFF44",
-    "other": "#FFFFFF"
+  const entity = {
+    "estagio": {name:"Estágio", color:"#CC66CC"},
+    "bolsa_ic": {name:"IC", color:"#72f542"},
+    "extensao": {name:"Extensão", color:"#FFFF44"},
+    "other": {name:"Outros", color:"#FFFFFF"}
   }
 
-  const backgroundColor = colors[data.type] || colors["other"]
+  const backgroundColor = data.type in entity ? entity[data.type].color : entity["other"].color;
+  const typeName = data.type in entity ? entity[data.type].name : entity["other"].name;
   const descriptionInfo = [
     {
       value: "Descrição: ",
@@ -38,49 +39,56 @@ const Card = ({ data, children }) => {
 
 
   return (
-    <Link to={'/offer/' + data._id} className={styles.link}>
+    <Link to={"/offer/" + data._id} className={styles.link}>
       <BrowserView>
         <div className={styles.card}>
           <div className={styles.overheader}>
-            <span style={{ backgroundColor: backgroundColor }} className={styles.type}>{data.type}</span>
+            <span style={{ backgroundColor: backgroundColor }} className={styles.type} >
+              {typeName}
+            </span>
             {children}
           </div>
-        
+
           <div className={styles.cardContent}>
-          <h2 className={styles.title}>{data.title}</h2>
-          {descriptionInfo.map(({value, text, ...rest}) => (
-            <Detail value={value} text={text} />
-          ))}
+            <h2 className={styles.title}>{data.title}</h2>
+            {descriptionInfo.map(({ value, text, ...rest }) => (
+              <Detail value={value} text={text} />
+            ))}
           </div>
           <div className={styles.extraContent}>
-          {selectedInfo.map(({value, text, ...rest}) => (
-            <Detail value={value} text={text} />
-          ))}
+            {selectedInfo.map(({ value, text, ...rest }) => (
+              <Detail value={value} text={text} />
+            ))}
           </div>
         </div>
       </BrowserView>
       <MobileView>
         <div className={styles.cardMobile}>
           <div className={styles.overheader}>
-            <span style={{ backgroundColor: backgroundColor }} className={styles.type}>{data.type}</span>
+            <span
+              style={{ backgroundColor: backgroundColor }}
+              className={styles.type}
+            >
+              {data.type}
+            </span>
             {children}
           </div>
-        
+
           <div className={styles.cardContentMobile}>
-          <h2 className={styles.title}>{data.title}</h2>
-          {descriptionInfo.map(({value, text, ...rest}) => (
-            <Detail value={value} text={text} />
-          ))}
+            <h2 className={styles.title}>{data.title}</h2>
+            {descriptionInfo.map(({ value, text, ...rest }) => (
+              <Detail value={value} text={text} />
+            ))}
           </div>
           <div className={styles.extraContentMobile}>
-          {selectedInfo.map(({value, text, ...rest}) => (
-            <Detail value={value} text={text} />
-          ))}
+            {selectedInfo.map(({ value, text, ...rest }) => (
+              <Detail value={value} text={text} />
+            ))}
           </div>
         </div>
       </MobileView>
     </Link>
-  )  
+  );  
 }
 
 export default Card
