@@ -11,7 +11,7 @@ const About = () => {
             <BrowserView>
             <div className={styles.aboutContainer}>
                 <div className={styles.contentContainer}>
-                    <h1 className={styles.title}>Sobre <br></br>Pega a visão</h1>
+                    <h1 className={styles.title}>Sobre o <br></br>Pega a visão</h1>
                 </div>
                 <div className={styles.line}></div>
                 <div className={styles.gridContainer}>
