@@ -1,29 +1,41 @@
 import React from 'react'
 import { Loading } from "../components"
-import { Redirect, useLocation } from 'react-router-dom'
+import { Redirect, useLocation, useHistory } from 'react-router-dom'
 import { isLoggedIn, verifyEmail } from '../utils/api'
 import { useState, useEffect } from 'react'
 import queryString from 'query-string'
 
 const VerifyEmail = () => {
     const location = useLocation()
+    const history = useHistory()
     const [loading, setLoading] = useState(true)
-    const emailToken = queryString.parse(location.search).token
+    const [loggedIn, setLoggedIn] = useState(isLoggedIn())
+    const parsedSearch = queryString.parse(location.search)
 
     useEffect(() => {
-        if (!emailToken) {
-            return (setLoading(false))
-        }
-        verifyEmail(emailToken).then(() => {
-            setLoading(false)
+        if (parsedSearch.verified) return (<Redirect to='/' />)
+        if (!parsedSearch.token) return (setLoading(false))
+        verifyEmail(parsedSearch.token).then((response) => {
+            localStorage.setItem('@pav/userToken', JSON.stringify(response.data.token))
+            setLoggedIn(true)
         }).catch(() => {
             setLoading(false)
         }) 
-    }, [emailToken])
+    }, [parsedSearch])
 
-    if (isLoggedIn()) return (<Redirect to='/' />)
-    if (loading) return (<Loading/>)
-
+    if (loggedIn) {
+        if (loading) {
+            history.push('&verified=true')
+            window.location.reload()
+        } else {
+          return <Redirect to='/' />
+        }
+    }
+    
+    if (loading) {
+        return <Loading />
+    }
+    
     return (
         <Redirect to='/sign_in' />
     )
