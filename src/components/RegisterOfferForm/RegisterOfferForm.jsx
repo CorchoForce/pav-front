@@ -85,7 +85,7 @@ const RegisterOfferForm = () => {
           <label>Adicione uma lista de tags para facilitar o encontro da sua oferta!</label>
           <input className={styles.formInput} type="text" onChange={
             (e) => setOffer({...offer, tags: e.target.value.replace(/\s/g, '').split(',')})
-            } placeholder="tag1,tag2,tag3" />
+            } placeholder="tecnologia, ruby, farmácia" />
           <p className={styles.tagDescription}>As tags devem ser separadas por , (vírgula)</p>
         </div>
         <hr />
@@ -117,7 +117,7 @@ const RegisterOfferForm = () => {
         <hr />
         <input className={styles.formInput} type="text" onChange={
           (e) => setOffer({...offer, neededHours: e.target.value})
-          } placeholder="Horas necessárias" required />
+          } placeholder="Carga Horária" required />
         <hr />
         <input className={styles.formInput} defaultValue={offer.contactEmail} type="text" onChange={
           (e) => setOffer({...offer, contactEmail: e.target.value})
