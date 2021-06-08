@@ -43,7 +43,7 @@ const SignUpForm = () => {
   }
 
   if (loading) {
-    return <Loading height={100} width={100} />
+    return <Loading />
   }
 
   return (
