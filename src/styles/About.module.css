@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@600&display=swap');
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; } 
+  }
+  @-moz-keyframes fadeIn {
+  0% { opacity: 0;}
+  100% { opacity: 1; }
+  }
+  @-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+  @keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+
 
 .aboutContainer {
   display: flex;
@@ -8,17 +27,20 @@
   grid-auto-rows: 240px;
   width: 90%;
   min-height: 80vh;
-  background-size: 10em;
+  background-image: url(../images/PV.jpeg);
+  background-size:cover;
   background-repeat: no-repeat;
   padding: 10vh;
 
-  font-family: 'Roboto', sans-serif;
-  text-align: justify;
+  font-family: 'Overpass Mono', monospace;
+
 }
 
 
 .contentContainer{
   width: 50%;
+  color: aliceblue;
+  
 }
 
 
@@ -26,17 +48,22 @@
 width: 0;
 height: 80%px;
 
-border: 1px solid #000000;
+border: 1px solid #ffff;
 
 }
 
 .title {
-
   display: flex;
   font-size: 5em;
+  text-shadow: 0 4px 8px #000;
+  -webkit-animation: fadeIn 1s ease-in-out;
+  -moz-animation: fadeIn 1s ease-in-out;
+  -o-animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .gridContainer{
+  text-align: justify;
   display: grid;
   gap: 1rem;
 
@@ -46,29 +73,18 @@ border: 1px solid #000000;
   width: 50%;
   padding-top: 5%;
 
-}
+  color: #ffff;
+  text-shadow: 2px 2px 1px #000000;
 
-.gridElement1{
-  grid-row: span 2 / auto;
-  grid-column: span 2 / auto;
-  background-image: url(../images/PV.jpg);
-  background-size:cover;
-}
-.gridElement2{
-  background-image: url(../images/CT.jpg);
-  background-size: cover;
-}
-.gridElement3{
-  background-image: url(../images/REITORIA.jpg);
-  background-size: cover;
-}
-.gridElement4{
-  grid-column: span 2 / auto;
-  background-image: url(../images/entrada-da-ufrj.jpg);
-  background-size: cover;
+
+  -webkit-animation: fadeIn 1s ease-in-out;
+  -moz-animation: fadeIn 1s ease-in-out;
+  -o-animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+
 
 }
-.gridElement5{
-  background-image: url(../images/FND.jpg);
-  background-size: cover;
+
+.p{
+  box-shadow: 0 1px 1px #000;
 }
