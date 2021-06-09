@@ -65,6 +65,11 @@
   outline: none;
 }
 
+.required:after {
+  content:" *"; 
+  color: red;
+}
+
 .tagDescription {
   color:#4294c7;
   margin: 0;
