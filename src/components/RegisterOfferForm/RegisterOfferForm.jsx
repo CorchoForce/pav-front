@@ -48,9 +48,12 @@ const RegisterOfferForm = () => {
   return (
     <div className={styles.wrap}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <input className={styles.formInput} type="text" onChange={
-          (e) => setOffer({...offer, title: e.target.value})
-          } placeholder="Título" required />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} class={styles.required}>Título da oferta</label>
+          <input className={styles.formInput} type="text" onChange={
+            (e) => setOffer({...offer, title: e.target.value})
+            } placeholder="Título" required />
+        </div>
         <hr />
         <div className={styles.formWrapper}>
           <label>Tipo da oferta</label>
@@ -73,55 +76,76 @@ const RegisterOfferForm = () => {
             } placeholder="Tipo" required /> : undefined}
         </div>
         <hr />
-        <input className={styles.formInput} type="text" onChange={
-          (e) => setOffer({...offer, requirements: e.target.value})
-          } placeholder="Requisitos" />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} class={styles.required}>Requisitos para a vaga</label>
+          <input className={styles.formInput} type="text" onChange={
+            (e) => setOffer({...offer, requirements: e.target.value})
+            } placeholder="Requisitos" required/>
+        </div>
         <hr />
-        <input className={styles.formInput} defaultValue={offer.site} type="text" onChange={
-          (e) => setOffer({...offer, site: e.target.value})
-          } placeholder="Site" />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} >Site</label>
+          <input className={styles.formInput} defaultValue={offer.site} type="text" onChange={
+            (e) => setOffer({...offer, site: e.target.value})
+            } placeholder="Site" />
+        </div>
         <hr />
         <div className={styles.formWrapper}>
           <label>Adicione uma lista de tags para facilitar o encontro da sua oferta!</label>
           <input className={styles.formInput} type="text" onChange={
             (e) => setOffer({...offer, tags: e.target.value.replace(/\s/g, '').split(',')})
-            } placeholder="tag1,tag2,tag3" />
+            } placeholder="tecnologia, ruby, farmácia" />
           <p className={styles.tagDescription}>As tags devem ser separadas por , (vírgula)</p>
         </div>
         <hr />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} class={styles.required}>Descrição da Vaga</label>
         <input className={styles.formInput} type="text" onChange={
           (e) => setOffer({...offer, description: e.target.value})
           } placeholder="Descrição" required />
+        </div>
         <hr />
         <div className = {styles.formWrapper}>
-          <label>Data limite para aplicação</label>
+          <label class={styles.required} > Data limite para aplicação</label>
           <input className={styles.formInput} onChange={
             (e) => setOffer({...offer, deadline: e.target.value})
             } type="date" required />
         </div>
         <hr />
-        <input className={styles.formInput} type="text" onChange={
-          (e) => setOffer({...offer, pay: e.target.value})
-          } placeholder="Remuneração" required />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} class={styles.required}>Remuneração da Vaga</label>
+          <input className={styles.formInput} type="text" onChange={
+            (e) => setOffer({...offer, pay: e.target.value})
+            } placeholder="Remuneração" required />
+        </div>
         <hr />
         <div className = {styles.formWrapper}>
-          <label>Data de Ingresso</label>
+          <label class={styles.required} >Data para Ingresso</label>
           <input className={styles.formInput} onChange={
             (e) => setOffer({...offer, beginningDate: e.target.value})
             } type="date" required />
         </div>
         <hr />
-        <input className={styles.formInput} defaultValue={offer.localization} type="text" onChange={
-          (e) => setOffer({...offer, localization: e.target.value})
-          } placeholder="Localização" required />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} class={styles.required}> Localização</label>
+          <input className={styles.formInput} defaultValue={offer.localization} type="text" onChange={
+            (e) => setOffer({...offer, localization: e.target.value})
+            } placeholder="Localização" required />
+        </div>
         <hr />
-        <input className={styles.formInput} type="text" onChange={
-          (e) => setOffer({...offer, neededHours: e.target.value})
-          } placeholder="Horas necessárias" required />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} class={styles.required}> Carga Horária</label>
+          <input className={styles.formInput} type="text" onChange={
+            (e) => setOffer({...offer, neededHours: e.target.value})
+            } placeholder="Carga Horária" required />
+        </div>
         <hr />
-        <input className={styles.formInput} defaultValue={offer.contactEmail} type="text" onChange={
-          (e) => setOffer({...offer, contactEmail: e.target.value})
-          } placeholder="Email para contato" required />
+        <div className={styles.formWrapper}>
+          <label for={styles.formInput} class={styles.required}> Email para contato</label>
+          <input className={styles.formInput} defaultValue={offer.contactEmail} type="text" onChange={
+            (e) => setOffer({...offer, contactEmail: e.target.value})
+            } placeholder="Email para contato" required />
+        </div>
         <button className={styles.formButton} type="submit">Cadastrar oferta!</button>
       </form>
       {errorMessage ? <p className={styles.errorMessage}>{errorMessage}</p> : undefined }
