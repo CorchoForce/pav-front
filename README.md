@@ -1,7 +1,7 @@
 # Pega A Visão
+<a href="https://codeclimate.com/github/CorchoForce/pav-front/maintainability"><img src="https://api.codeclimate.com/v1/badges/ed702d3a9cbf7cd49529/maintainability" /></a>
 
 ![demonstration](https://cdn.discordapp.com/attachments/539836343094870016/843711539256754196/pav.gif)
-
 ## Table of Contents
 
 <!--ts-->
