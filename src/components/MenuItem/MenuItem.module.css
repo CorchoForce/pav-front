@@ -1,12 +1,12 @@
 .text {
   color:cornsilk;
   text-decoration: none;
-  font-family:"Lucida Console", monospace;
+  font-family:"Lucida Console";
 }
 
 .item {
   list-style-type: none;
-  margin: 10px;
+  margin: 15px;
 }
 
 .text:after {
