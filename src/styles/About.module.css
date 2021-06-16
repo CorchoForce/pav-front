@@ -204,17 +204,21 @@ border: 1px solid #ffff;
   text-shadow: 3px 5px 8px black;
 }
 
+
 .gridContainerSecond{
-  color: aliceblue;
+  color: rgb(240, 248, 255);
   font-family: monospace;
   font-size: 2vh;
   text-shadow: 1px 2px 1px black;
+  padding-top: 1vh;
 }
 
 .gridContainerSecond::before{
+  content: "";
+  position: absolute;
   width: 100%;
   height: 0vh;
-  border: 2px solid azure;
+  border: 1px solid rgba(84, 84, 84, 0.3);
 }
 
 .thirdContainer{
@@ -238,11 +242,20 @@ border: 1px solid #ffff;
 }
 
 .gridContainerFourth{
+  padding-top: 1vh;
   color: aliceblue;
   font-family: monospace;
   font-size: 2vh;
   text-shadow: 3px 5px 8px black;
 
+}
+
+.gridContainerFourth::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0vh;
+  border: 1px solid rgba(84, 84, 84, 0.3);
 }
 }
 
