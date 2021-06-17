@@ -50,7 +50,7 @@ const SignUpForm = () => {
     <div className={styles.wrap}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input className={styles.formInput} type="text" value={user.name} onChange={(e) => setUser({...user, name: e.target.value})} placeholder="Nome" required />
-        <input className={styles.formInput} type="text" value={user.college} onChange={(e) => setUser({...user, college: e.target.value})} placeholder="Faculdade" required />        
+        <input className={styles.formInput} type="text" value={user.institution} onChange={(e) => setUser({...user, institution: e.target.value})} placeholder="Empresa/Faculdade" required />        
         <input className={styles.formInput} type="email" value={user.email} onChange={(e) => setUser({...user, email: e.target.value})} placeholder="Email" required />
         <input className={styles.formInput} type="password" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} placeholder="Senha" required />
         <input className={styles.formInput} maxLength='14' value={user.CPF} type="text" onChange={(e) => setUser({...user, CPF: cpfMask(e.target.value)} )} placeholder="CPF" required />
