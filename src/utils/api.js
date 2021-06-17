@@ -25,14 +25,15 @@ const getMyOffers = () => {
   )
 }
 
-const register = ({name, email, password, CPF}) => {
+const register = ({name, college, email, password, CPF}) => {
   return (
     apiClient.post('/register',
       {
         "name": name,
         "email": email,
         "password": password,
-        "CPF": CPF
+        "CPF": CPF,
+        "college": college
       }
     )
   )
