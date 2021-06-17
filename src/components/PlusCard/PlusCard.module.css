@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content:center;
   align-items: center;
   width: min(300px, 70vw);
   height: 90%;
@@ -23,6 +23,15 @@
   color: #000000; 
 }
 
+.text {
+  display: flex;
+  width: auto;
+  position: relative;
+  font-weight:bold;
+  font-size-adjust:inherit;
+  top:-30%
+}
+
 .plus {
   display: flex;
   align-items: center;
@@ -41,4 +50,7 @@
 .plusImage {
   width: 100px;
   height: 100px;
+  flex-direction: column;
+  position: relative;
+  top:-30px;
 }
