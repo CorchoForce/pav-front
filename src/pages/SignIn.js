@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/SignIn.module.css'
-import { SignInForm } from '../components'
+import { SignInForm, RecoverPasswordButton } from '../components'
 import logo from "../images/navbar_logo.png";
 
 const SignIn = () => {
@@ -14,8 +14,10 @@ const SignIn = () => {
         <Link to="/sign_up" style={{
           textDecoration: "none",
           color: "#4294c7",
-          fontStyle: "italic" }}> Cadastre-se agora! </Link>
+          fontStyle: "italic"
+        }}> Cadastre-se agora! </Link>
       </p>
+      <RecoverPasswordButton />
       {/* <Link to="/forgot_password" style={{
         color: "#FFF0F0",
         textDecoration: "none",

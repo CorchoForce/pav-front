@@ -5,7 +5,7 @@ import { Loading } from '..'
 
 const RecoverPasswordButton = ({ email }) => {
     const [loading, setLoading] = useState(false)
-    const [text, setText] = useState("Requisitar email de recuperação de senha")
+    const [text, setText] = useState("Requisitar recuperação de senha")
     const [disabled, setDisabled] = useState(false)
 
     const handleClick = () => {
