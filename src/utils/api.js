@@ -17,7 +17,7 @@ const getOffers = (text) => {
 
 const getMyOffers = () => {
   return (
-    apiClient.get('/myoffers',  {
+    apiClient.get('/myoffers', {
       headers: {
         'Authorization': "Bearer " + JSON.parse(localStorage.getItem('@pav/userToken'))
       }
@@ -25,7 +25,32 @@ const getMyOffers = () => {
   )
 }
 
-const register = ({ name, institution, email, password, CPF}) => {
+const sendRecoverEmail = (email) => {
+  return (
+    apiClient.post('/recover_password',
+      {
+        "email": email
+      }
+    )
+  )
+}
+
+const recoverPassword = (token, password, confirmation_password) => {
+  return (
+    apiClient.put('/recover_password',
+      {
+        "password": password,
+        "confirmation_password": confirmation_password,
+      }, {
+      headers: {
+        "Authorization": "Bearer " + token
+      }
+    }
+    )
+  )
+}
+
+const register = ({ name, institution, email, password, CPF }) => {
   return (
     apiClient.post('/register',
       {
@@ -74,18 +99,18 @@ const createOffer = (body) => {
 
 const verifyEmail = (token) => {
   return (
-      apiClient.post('/mail/verify', {},{
-        headers: {
-          "Authorization": "Bearer " + token
-        }
+    apiClient.post('/mail/verify', {}, {
+      headers: {
+        "Authorization": "Bearer " + token
       }
+    }
     )
   )
 }
 
 const sendEmail = (email, senha) => {
   return (
-    apiClient.post('/mail/send', 
+    apiClient.post('/mail/send',
       {
         "email": email,
         "senha": senha,
@@ -102,4 +127,4 @@ const logout = () => {
   window.location.reload()
 }
 
-export { verifyEmail, sendEmail, getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer, createOffer }
+export { verifyEmail, sendEmail, getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer, createOffer, sendRecoverEmail, recoverPassword }
