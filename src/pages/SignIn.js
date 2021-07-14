@@ -9,20 +9,23 @@ const SignIn = () => {
     <div className={styles.signInContainer} >
       <img src={logo} alt="PAV Main Logo" className={styles.logo} />
       <SignInForm />
+      <p style={{ fontWeight: "bold", marginBottom: "2px" }}>
+        Esqueceu sua senha?
+        <Link to="/forgot_password" style={{
+          textDecoration: "none",
+          color: "#4294c7",
+          fontStyle: "italic"
+        }}> Recupere-a agora! </Link>
+      </p>
       <p style={{ fontWeight: "bold" }}>
         Não possui conta?
         <Link to="/sign_up" style={{
           textDecoration: "none",
           color: "#4294c7",
-          fontStyle: "italic" }}> Cadastre-se agora! </Link>
+          fontStyle: "italic"
+        }}> Cadastre-se agora! </Link>
       </p>
-      {/* <Link to="/forgot_password" style={{
-        color: "#FFF0F0",
-        textDecoration: "none",
-        fontStyle: "italic" }}>
-          Esqueci minha senha...
-      </Link> */}
-    </div>
+    </div >
   )
 }
 
