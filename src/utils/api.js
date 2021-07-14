@@ -25,7 +25,7 @@ const getMyOffers = () => {
   )
 }
 
-const sendRecoverEmail = () => {
+const sendRecoverEmail = (email) => {
   return (
     apiClient.post('/recover_password',
       {
@@ -127,4 +127,4 @@ const logout = () => {
   window.location.reload()
 }
 
-export { verifyEmail, sendEmail, getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer, createOffer }
+export { verifyEmail, sendEmail, getOffers, getOffer, getMyOffers, register, login, isLoggedIn, logout, deleteOffer, createOffer, sendRecoverEmail, recoverPassword }
