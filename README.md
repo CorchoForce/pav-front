@@ -1,7 +1,7 @@
 # Pega A Visão
+<a href="https://codeclimate.com/github/CorchoForce/pav-front/maintainability"><img src="https://api.codeclimate.com/v1/badges/ed702d3a9cbf7cd49529/maintainability" /></a>
 
 ![demonstration](https://cdn.discordapp.com/attachments/539836343094870016/843711539256754196/pav.gif)
-
 ## Table of Contents
 
 <!--ts-->
@@ -70,11 +70,15 @@ $ touch .env
  MONGO_PORT=27017 # Mongo port
  MONGO_DB=pav #Mongo database
  MONGO_HOSTNAME=127.0.0.1 #Mongo hostname
-
+ EMAIL_KEY= #The email content before @
+ EMAIL_DOMAIN= #The email domain
+ EMAIL_PASSWORD= #The email password
+ APP_KEY= #The backend application key
+ 
 #Run the docker-compose file
 $ docker-compose up
 
-#The api will be running in the port 27017
+#The api will be running in the port 8080
 ```
 
 ![demonstration](https://cdn.discordapp.com/attachments/836348442409828385/843592277590802442/unknown.png)
